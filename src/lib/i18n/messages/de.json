@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "gallery": "Galerie",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cart": "Warenkorb",
+    "blog": "Blog",
+    "cta": "Jetzt buchen"
+  },
+  "hero": {
+    "headline": "Wunderschöne Blumen, mit Liebe gefertigt",
+    "subheadline": "Handgefertigte Arrangements für Hochzeiten, Events und den Alltag.",
+    "cta": "Kollektion ansehen",
+    "secondaryCta": "Kontaktieren Sie uns"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Was wir anbieten, um Ihre Momente besonders zu machen."
+  },
+  "about": {
+    "title": "Unsere Geschichte",
+    "subtitle": "Erfahren Sie mehr über unsere Reise und Werte."
+  },
+  "gallery": {
+    "title": "Unsere Arbeiten",
+    "subtitle": "Entdecken Sie unsere neuesten Kreationen.",
+    "viewAll": "Alle ansehen",
+    "viewMore": "Ansehen",
+    "empty": "Keine Elemente in dieser Kategorie gefunden.",
+    "addToCart": "In den Warenkorb",
+    "sort": {
+      "label": "Sortieren nach",
+      "newest": "Neueste zuerst",
+      "oldest": "Älteste zuerst",
+      "nameAZ": "Name A-Z",
+      "nameZA": "Name Z-A",
+      "popular": "Beliebt"
+    }
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Echte Bewertungen von echten Menschen."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf häufige Fragen."
+  },
+  "cta": {
+    "title": "Bereit, Ihren Raum aufzuhellen?",
+    "button": "Loslegen"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "successMessage": "Vielen Dank! Ihre Nachricht wurde gesendet.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre@email.de",
+      "phone": "Telefon",
+      "phonePlaceholder": "+49 ...",
+      "message": "Nachricht",
+      "messagePlaceholder": "Wie können wir Ihnen helfen?",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet..."
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "hours": "Öffnungszeiten",
+      "closed": "Geschlossen"
+    }
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "Lernen Sie die Menschen hinter den Blumen kennen."
+  },
+  "pricing": {
+    "title": "Preise",
+    "subtitle": "Wählen Sie den perfekten Plan für Sie.",
+    "popular": "Beliebt",
+    "getStarted": "Loslegen"
+  },
+  "features": {
+    "title": "Warum Wir",
+    "subtitle": "Alles für ein perfektes Blumenerlebnis."
+  },
+  "partners": {
+    "title": "Vertraut von",
+    "subtitle": "Stolz, führende Einrichtungen zu bedienen."
+  },
+  "stats": {
+    "title": "Unsere Wirkung",
+    "subtitle": "Zahlen, die für sich sprechen."
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "aboutPage": {
+    "title": "Über uns"
+  },
+  "privacy": {
+    "title": "Datenschutzrichtlinie"
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer.",
+    "continueShopping": "Weiter einkaufen",
+    "summary": "Bestellübersicht",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "calculated": "Wird an der Kasse berechnet",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "processing": "Verarbeitung...",
+    "clearCart": "Warenkorb leeren",
+    "addToCart": "In den Warenkorb",
+    "addedToCart": "zum Warenkorb hinzugefügt"
+  },
+  "checkout": {
+    "success": "Zahlung erfolgreich!",
+    "successMessage": "Vielen Dank für Ihre Bestellung. Sie erhalten in Kürze eine Bestätigungs-E-Mail.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "hours": "Öffnungszeiten",
+    "closed": "Geschlossen",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "meta": {
+    "title": "Fleur & Co — Handwerklicher Florist in Nizza",
+    "description": "Handgefertigte Blumenarrangements für Hochzeiten, Events und den Alltag."
+  }
+}

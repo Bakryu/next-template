@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "about": "À propos",
+    "contact": "Contact",
+    "cart": "Panier",
+    "blog": "Blog",
+    "cta": "Réserver"
+  },
+  "hero": {
+    "headline": "De belles fleurs, créées avec amour",
+    "subheadline": "Arrangements artisanaux pour mariages, événements et joies quotidiennes.",
+    "cta": "Parcourir la collection",
+    "secondaryCta": "Nous contacter"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Ce que nous offrons pour rendre vos moments spéciaux."
+  },
+  "about": {
+    "title": "Notre Histoire",
+    "subtitle": "En savoir plus sur notre parcours et nos valeurs."
+  },
+  "gallery": {
+    "title": "Nos Réalisations",
+    "subtitle": "Découvrez nos dernières créations.",
+    "viewAll": "Voir tout",
+    "viewMore": "Voir",
+    "empty": "Aucun élément trouvé dans cette catégorie.",
+    "addToCart": "Ajouter au panier",
+    "sort": {
+      "label": "Trier par",
+      "newest": "Plus récent",
+      "oldest": "Plus ancien",
+      "nameAZ": "Nom A-Z",
+      "nameZA": "Nom Z-A",
+      "popular": "Populaire"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "De vrais avis de vraies personnes."
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Trouvez des réponses aux questions courantes."
+  },
+  "cta": {
+    "title": "Prêt à illuminer votre espace ?",
+    "button": "Commencer"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "successMessage": "Merci ! Votre message a été envoyé.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "phone": "Téléphone",
+      "phonePlaceholder": "+33 ...",
+      "message": "Message",
+      "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "hours": "Heures d'ouverture",
+      "closed": "Fermé"
+    }
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "subtitle": "Rencontrez les personnes derrière les bouquets."
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Choisissez le plan parfait pour vous.",
+    "popular": "Populaire",
+    "getStarted": "Commencer"
+  },
+  "features": {
+    "title": "Pourquoi Nous Choisir",
+    "subtitle": "Tout ce qu'il faut pour une expérience florale parfaite."
+  },
+  "partners": {
+    "title": "Ils nous font confiance",
+    "subtitle": "Fiers de servir des établissements de renom."
+  },
+  "stats": {
+    "title": "Notre Impact",
+    "subtitle": "Des chiffres qui parlent d'eux-mêmes."
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "aboutPage": {
+    "title": "À propos"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité"
+  },
+  "terms": {
+    "title": "Conditions d'utilisation"
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide.",
+    "continueShopping": "Continuer les achats",
+    "summary": "Résumé de la commande",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "calculated": "Calculé à la caisse",
+    "total": "Total",
+    "checkout": "Passer à la caisse",
+    "processing": "Traitement...",
+    "clearCart": "Vider le panier",
+    "addToCart": "Ajouter au panier",
+    "addedToCart": "ajouté au panier"
+  },
+  "checkout": {
+    "success": "Paiement réussi !",
+    "successMessage": "Merci pour votre commande. Vous recevrez un email de confirmation sous peu.",
+    "backHome": "Retour à l'accueil"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "hours": "Horaires",
+    "closed": "Fermé",
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "meta": {
+    "title": "Fleur & Co — Fleuriste artisanal à Nice",
+    "description": "Arrangements floraux artisanaux pour mariages, événements et joies quotidiennes."
+  }
+}

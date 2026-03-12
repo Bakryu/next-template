@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "blog": "Blog",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "headline": "Beautiful Flowers, Crafted with Love",
+    "subheadline": "Handcrafted arrangements for weddings, events, and everyday joy.",
+    "cta": "Browse Collection",
+    "secondaryCta": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "What we offer to make your moments special."
+  },
+  "about": {
+    "title": "Our Story",
+    "subtitle": "Learn more about our journey and values."
+  },
+  "gallery": {
+    "title": "Our Work",
+    "subtitle": "Browse our latest creations.",
+    "viewAll": "View All",
+    "viewMore": "View",
+    "empty": "No items found in this category.",
+    "addToCart": "Add to Cart",
+    "sort": {
+      "label": "Sort by",
+      "newest": "Newest First",
+      "oldest": "Oldest First",
+      "nameAZ": "Name A-Z",
+      "nameZA": "Name Z-A",
+      "popular": "Popular"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real reviews from real people."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions."
+  },
+  "cta": {
+    "title": "Ready to Brighten Your Space?",
+    "button": "Get Started"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "successMessage": "Thank you! Your message has been sent.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+33 ...",
+      "message": "Message",
+      "messagePlaceholder": "How can we help?",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Opening Hours",
+      "closed": "Closed"
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the people behind the blooms."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Choose the perfect plan for you.",
+    "popular": "Popular",
+    "getStarted": "Get Started"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "subtitle": "Everything you need for the perfect floral experience."
+  },
+  "partners": {
+    "title": "Trusted By",
+    "subtitle": "Proudly serving leading establishments."
+  },
+  "stats": {
+    "title": "Our Impact",
+    "subtitle": "Numbers that speak for themselves."
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "aboutPage": {
+    "title": "About Us"
+  },
+  "privacy": {
+    "title": "Privacy Policy"
+  },
+  "terms": {
+    "title": "Terms of Service"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty.",
+    "continueShopping": "Continue Shopping",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "calculated": "Calculated at checkout",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "processing": "Processing...",
+    "clearCart": "Clear Cart",
+    "addToCart": "Add to Cart",
+    "addedToCart": "added to cart"
+  },
+  "checkout": {
+    "success": "Payment Successful!",
+    "successMessage": "Thank you for your order. You will receive a confirmation email shortly.",
+    "backHome": "Back to Home"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "hours": "Hours",
+    "closed": "Closed",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "meta": {
+    "title": "Fleur & Co — Artisanal Florist in Nice",
+    "description": "Handcrafted flower arrangements for weddings, events, and everyday joy."
+  }
+}
