@@ -215,8 +215,114 @@
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen"
   },
+  "video": {
+    "overline": "Sehen Sie uns bei der Arbeit",
+    "heading": "Hinter den Kulissen",
+    "subtitle": "So entstehen unsere Arrangements — von der ersten Blüte bis zur letzten Schleife.",
+    "body": "Jedes Arrangement beginnt mit einem Gespräch. Wir wählen die frischesten Saisonblumen aus und gestalten jedes Stück mit Sorgfalt und Präzision.",
+    "play": "Video abspielen",
+    "mute": "Ton aus",
+    "unmute": "Ton an"
+  },
+  "beforeAfter": {
+    "overline": "Transformationen",
+    "heading": "Sehen Sie den Unterschied",
+    "subtitle": "Von leeren Räumen zu beeindruckenden Blumenarrangements — das schaffen wir.",
+    "before": "Vorher",
+    "after": "Nachher",
+    "hoverHint": "Hover zum Anzeigen",
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+  "promotions": {
+    "overline": "Sonderangebote",
+    "heading": "Angebote, die begeistern",
+    "subtitle": "Zeitlich begrenzte Angebote und Saisonaktionen — schnell sein lohnt sich.",
+    "expires": "Endet am",
+    "claimButton": "Angebot sichern",
+    "badgeNew": "Neu",
+    "badgeHot": "Beliebt",
+    "days": "T",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek"
+  },
+  "newsletter": {
+    "overline": "Newsletter",
+    "heading": "In Blüte bleiben",
+    "subtitle": "Saisonale Inspirationen, exklusive Angebote und Pflegetipps direkt in Ihr Postfach.",
+    "placeholder": "ihre@email.de",
+    "placeholderName": "Ihr Vorname",
+    "labelEmail": "E-Mail-Adresse",
+    "labelName": "Vorname",
+    "submit": "Abonnieren",
+    "successMessage": "Sie haben abonniert — herzlich willkommen!",
+    "privacyNote": "Kein Spam. Jederzeit abmeldbar.",
+    "formHeading": "Unserem Newsletter beitreten",
+    "formSubtitle": "Erhalten Sie als Erster Einblicke in neue Kollektionen und saisonale Aktionen.",
+    "perk1": "Frühzeitiger Zugang zu Saisonsollektionen und Neuheiten",
+    "perk2": "Exklusive Rabatte und Gewinnspiele für Abonnenten",
+    "perk3": "Blumenpflegetipps und Gestaltungsinspirationen jeden Monat"
+  },
+  "booking": {
+    "overline": "Termin buchen",
+    "heading": "Reservieren Sie Ihren Termin",
+    "subtitle": "Wählen Sie einen Service und kontaktieren Sie uns — wir bestätigen Ihre Buchung innerhalb einer Stunde.",
+    "selectedLabel": "Ihre Auswahl",
+    "duration": "Dauer",
+    "price": "Preis",
+    "contactPrompt": "Kontaktieren Sie uns zur Buchungsbestätigung:",
+    "cta": "Jetzt buchen",
+    "ctaCardHeading": "Bereit zu buchen?",
+    "ctaCardBody": "Kontaktieren Sie uns und wir bestätigen Ihren Termin innerhalb einer Stunde.",
+    "step1": "Service",
+    "step2": "Details",
+    "step3": "Bestätigung",
+    "step1Label": "Service auswählen",
+    "step2Label": "Ihre Angaben",
+    "fieldName": "Name",
+    "fieldNamePlaceholder": "Ihr Name",
+    "fieldPhone": "Telefon",
+    "fieldPhonePlaceholder": "+49 ...",
+    "fieldDate": "Gewünschtes Datum",
+    "fieldNote": "Notizen (optional)",
+    "fieldNotePlaceholder": "Besondere Wünsche?",
+    "next": "Weiter",
+    "back": "Zurück",
+    "confirmTitle": "Anfrage erhalten!",
+    "confirmBody": "Vielen Dank — wir bestätigen Ihren Termin in Kürze per Telefon oder E-Mail.",
+    "bookAnother": "Weiteren Termin buchen"
+  },
+  "process": {
+    "overline": "So funktioniert es",
+    "heading": "Einfache Schritte zu Ihrem perfekten Arrangement",
+    "subtitle": "Von der Idee bis zu Ihrer Tür — so einfach ist es, bei uns zu bestellen."
+  },
   "meta": {
     "title": "Fleur & Co — Handwerklicher Florist in Nizza",
     "description": "Handgefertigte Blumenarrangements für Hochzeiten, Events und den Alltag."
+  },
+  "instagram": {
+    "overline": "Instagram",
+    "heading": "Folgen Sie Unserer Geschichte",
+    "post": "Instagram-Beitrag",
+    "followButton": "Folgen Sie uns"
+  },
+  "certificates": {
+    "overline": "Zertifizierungen",
+    "heading": "Auszeichnungen & Anerkennung",
+    "subtitle": "Wir sind stolz, für unser Handwerk, unsere Nachhaltigkeit und unser Engagement für Exzellenz anerkannt zu werden."
+  },
+  "brands": {
+    "overline": "Unsere Partner",
+    "heading": "Marken, mit denen wir arbeiten",
+    "subtitle": "Wir arbeiten mit sorgfältig ausgewählten Partnern zusammen, die unser Engagement für Qualität teilen."
+  },
+  "notFound": {
+    "code": "404",
+    "heading": "Seite nicht gefunden",
+    "subtitle": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zurück zur Startseite",
+    "browseGallery": "Galerie ansehen"
   }
 }

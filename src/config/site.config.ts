@@ -274,7 +274,121 @@ export const siteConfig: SiteConfig = {
     { value: '150+', label: 'Flower Varieties' },
   ],
 
-  sections: ['hero', 'features', 'services', 'stats', 'about', 'gallery', 'team', 'pricing', 'testimonials', 'partners', 'faq', 'cta', 'contact'],
+  video: {
+    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    poster: 'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1200&q=80',
+    title: 'Behind the Scenes at Fleur & Co',
+    subtitle: 'Take a peek inside our studio and see how we craft each arrangement.',
+  },
+
+  beforeAfter: [
+    {
+      before: 'https://images.unsplash.com/photo-1490750967868-88df5691cc5c?w=800&q=80',
+      after: 'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80',
+      label: 'Wedding Table',
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      after: 'https://images.unsplash.com/photo-1455793132641-4dee7453ade1?w=800&q=80',
+      label: 'Entrance Arch',
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1563241527-3004b7be0b80?w=800&q=80',
+      after: 'https://images.unsplash.com/photo-1548460081-6e4d12771f72?w=800&q=80',
+      label: 'Bridal Bouquet',
+    },
+  ],
+
+  promotions: [
+    {
+      title: 'Spring Collection Launch',
+      description: 'Be the first to order from our new spring range — 15% off all arrangements until end of March.',
+      badge: 'new',
+      expiresAt: '2026-03-31',
+      href: '/gallery',
+    },
+    {
+      title: 'Free Delivery Weekends',
+      description: 'Order any bouquet on Saturday or Sunday and get free local delivery included.',
+      badge: 'hot',
+      href: '#contact',
+    },
+    {
+      title: 'Wedding Consultation',
+      description: 'Book a free 60-minute wedding floral consultation — no obligation, no pressure.',
+      href: '#booking',
+    },
+  ],
+
+  newsletter: {
+    heading: 'Stay in Bloom',
+    subtitle: 'Subscribe for seasonal inspiration, exclusive offers, and care tips delivered to your inbox.',
+    provider: 'mailchimp',
+  },
+
+  booking: {
+    heading: 'Book Your Appointment',
+    subtitle: 'Choose a service and get in touch — we will confirm your slot within the hour.',
+    services: [
+      { name: 'Wedding Consultation', duration: '60 min', price: 'Free' },
+      { name: 'Custom Bouquet Order', duration: '30 min', price: 'From €45' },
+      { name: 'Event Floral Design', duration: '90 min', price: 'From €350' },
+      { name: 'Weekly Subscription Setup', duration: '20 min', price: '€45/week' },
+    ],
+  },
+
+  process: [
+    {
+      title: 'Choose Your Service',
+      description: 'Browse our collections online or visit the shop to explore seasonal arrangements and bouquet styles.',
+      icon: 'bag',
+    },
+    {
+      title: 'Place Your Order',
+      description: 'Order online, call us, or stop by the shop. We will confirm availability and personalise the details with you.',
+      icon: 'phone',
+    },
+    {
+      title: 'We Craft It',
+      description: 'Our florists handcraft your arrangement using the freshest flowers, chosen that morning from our suppliers.',
+      icon: 'sparkles',
+    },
+    {
+      title: 'Delivered or Collected',
+      description: 'Pick it up from our boutique or we deliver to your door — same day for orders placed before 11 am.',
+      icon: 'gift',
+    },
+  ],
+
+  instagramPosts: [
+    { image: 'https://picsum.photos/seed/ig1/600/600', url: 'https://instagram.com', likes: 312, caption: 'Spring pastels 🌸 Hand-tied bouquet using the freshest ranunculus of the season.' },
+    { image: 'https://picsum.photos/seed/ig2/600/600', url: 'https://instagram.com', likes: 487, caption: 'Wedding table centrepiece. Always a joy to create something this romantic.' },
+    { image: 'https://picsum.photos/seed/ig3/600/600', url: 'https://instagram.com', likes: 225, caption: 'Behind the scenes — morning prep before a big event day 🌿' },
+    { image: 'https://picsum.photos/seed/ig4/600/600', url: 'https://instagram.com', likes: 390, caption: 'A pop of coral for a birthday gift. Made with love! 🧡' },
+    { image: 'https://picsum.photos/seed/ig5/600/600', url: 'https://instagram.com', likes: 178, caption: 'Dried botanicals for long-lasting beauty 🌾' },
+    { image: 'https://picsum.photos/seed/ig6/600/600', url: 'https://instagram.com', likes: 543, caption: 'Our bridal styling suite is now open for consultations. Book yours today!' },
+    { image: 'https://picsum.photos/seed/ig7/600/600', url: 'https://instagram.com', likes: 261, caption: 'Garden-style arrangement — nature at its wildest and most beautiful.' },
+    { image: 'https://picsum.photos/seed/ig8/600/600', url: 'https://instagram.com', likes: 317, caption: 'Custom wreath for a special housewarming. Every petal placed with care 🏡' },
+  ],
+
+  certificates: [
+    { title: 'Best Independent Florist', issuer: 'French Florist Federation', year: '2024' },
+    { title: 'Sustainable Business Award', issuer: 'Côte d\'Azur Chamber of Commerce', year: '2023' },
+    { title: 'RHS Certified Florist', issuer: 'Royal Horticultural Society', year: '2022' },
+    { title: 'Excellence en Artisanat', issuer: 'Ville de Nice', year: '2023' },
+    { title: 'Wedding Flowers Specialist', issuer: 'European Wedding Institute', year: '2021' },
+  ],
+
+  brands: [
+    { name: 'Fleuriste Premium', description: 'Exclusive supplier of premium Dutch roses and seasonal varieties sourced directly from growers.' },
+    { name: 'Terre & Fleurs', description: 'Organic and biodynamic flower farm providing sustainable local blooms.' },
+    { name: 'Ribbon & Co', description: 'Luxury packaging and ribbon partner for all boutique gifting.' },
+    { name: 'The Bloom Box', description: 'Curated subscription boxes featuring our signature arrangements.' },
+    { name: 'Fragrance Atelier', description: 'Artisan fragrance partner for our scented floral candles.' },
+    { name: 'GreenLeaf Supply', description: 'Eco-friendly wrapping and sustainable floral sundries supplier.' },
+  ],
+
+  sections: ['hero', 'features', 'services', 'process', 'booking', 'promotions', 'beforeAfter', 'video', 'stats', 'about', 'gallery', 'instagram', 'team', 'certificates', 'pricing', 'testimonials', 'brands', 'partners', 'newsletter', 'faq', 'cta', 'contact'],
 
   blog: [
     {

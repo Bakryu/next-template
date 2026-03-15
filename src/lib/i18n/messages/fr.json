@@ -215,8 +215,114 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation"
   },
+  "video": {
+    "overline": "Regardez-nous travailler",
+    "heading": "Dans les coulisses",
+    "subtitle": "Découvrez comment nous créons chaque arrangement — de la première fleur au dernier ruban.",
+    "body": "Chaque composition commence par une conversation. Nous sélectionnons les fleurs les plus fraîches de saison, puis nos fleuristes les assemblent avec soin et précision.",
+    "play": "Lire la vidéo",
+    "mute": "Couper le son",
+    "unmute": "Activer le son"
+  },
+  "beforeAfter": {
+    "overline": "Transformations",
+    "heading": "Voyez la différence",
+    "subtitle": "D'espaces vides à de superbes compositions florales — voici ce que nous créons.",
+    "before": "Avant",
+    "after": "Après",
+    "hoverHint": "Survolez pour révéler",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "promotions": {
+    "overline": "Offres Spéciales",
+    "heading": "Des Promotions à ne pas Rater",
+    "subtitle": "Offres limitées et promotions saisonnières — profitez-en vite.",
+    "expires": "Expire le",
+    "claimButton": "Profiter de l'offre",
+    "badgeNew": "Nouveau",
+    "badgeHot": "Populaire",
+    "days": "J",
+    "hours": "H",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "newsletter": {
+    "overline": "Newsletter",
+    "heading": "Restez en fleur",
+    "subtitle": "Inspirations saisonnières, offres exclusives et conseils d'entretien directement dans votre boîte mail.",
+    "placeholder": "votre@email.com",
+    "placeholderName": "Votre prénom",
+    "labelEmail": "Adresse e-mail",
+    "labelName": "Prénom",
+    "submit": "S'abonner",
+    "successMessage": "Vous êtes abonné(e) — bienvenue !",
+    "privacyNote": "Pas de spam. Désinscription à tout moment.",
+    "formHeading": "Rejoindre notre newsletter",
+    "formSubtitle": "Soyez le premier à découvrir nos nouvelles collections et promotions saisonnières.",
+    "perk1": "Accès anticipé aux collections saisonnières et nouveautés",
+    "perk2": "Réductions exclusives et cadeaux pour les abonnés",
+    "perk3": "Conseils d'entretien et inspirations florales chaque mois"
+  },
+  "booking": {
+    "overline": "Prendre Rendez-vous",
+    "heading": "Réservez Votre Créneau",
+    "subtitle": "Choisissez un service et contactez-nous — nous confirmerons votre rendez-vous dans l'heure.",
+    "selectedLabel": "Votre sélection",
+    "duration": "Durée",
+    "price": "Prix",
+    "contactPrompt": "Contactez-nous pour confirmer votre réservation :",
+    "cta": "Réserver",
+    "ctaCardHeading": "Prêt à réserver ?",
+    "ctaCardBody": "Contactez-nous et nous confirmerons votre créneau dans l'heure.",
+    "step1": "Service",
+    "step2": "Détails",
+    "step3": "Confirmation",
+    "step1Label": "Choisir un service",
+    "step2Label": "Vos coordonnées",
+    "fieldName": "Nom",
+    "fieldNamePlaceholder": "Votre nom",
+    "fieldPhone": "Téléphone",
+    "fieldPhonePlaceholder": "+33 ...",
+    "fieldDate": "Date souhaitée",
+    "fieldNote": "Notes (optionnel)",
+    "fieldNotePlaceholder": "Demandes particulières ?",
+    "next": "Suivant",
+    "back": "Retour",
+    "confirmTitle": "Demande reçue !",
+    "confirmBody": "Merci — nous confirmerons votre rendez-vous par téléphone ou e-mail sous peu.",
+    "bookAnother": "Réserver à nouveau"
+  },
+  "process": {
+    "overline": "Comment ça marche",
+    "heading": "Des étapes simples pour votre arrangement parfait",
+    "subtitle": "De l'idée à votre porte — voici comment commander facilement chez nous."
+  },
   "meta": {
     "title": "Fleur & Co — Fleuriste artisanal à Nice",
     "description": "Arrangements floraux artisanaux pour mariages, événements et joies quotidiennes."
+  },
+  "instagram": {
+    "overline": "Instagram",
+    "heading": "Suivez Notre Histoire",
+    "post": "Publication Instagram",
+    "followButton": "Nous suivre"
+  },
+  "certificates": {
+    "overline": "Certifications",
+    "heading": "Récompenses & Reconnaissance",
+    "subtitle": "Nous sommes fiers d'être reconnus pour notre savoir-faire, notre durabilité et notre engagement envers l'excellence."
+  },
+  "brands": {
+    "overline": "Nos Partenaires",
+    "heading": "Marques avec Lesquelles Nous Travaillons",
+    "subtitle": "Nous collaborons avec des partenaires soigneusement sélectionnés qui partagent notre engagement envers la qualité."
+  },
+  "notFound": {
+    "code": "404",
+    "heading": "Page Introuvable",
+    "subtitle": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "browseGallery": "Voir la galerie"
   }
 }

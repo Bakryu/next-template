@@ -26,7 +26,17 @@ export type SectionId =
   | 'pricing'
   | 'features'
   | 'partners'
-  | 'stats';
+  | 'stats'
+  | 'booking'
+  | 'process'
+  | 'beforeAfter'
+  | 'video'
+  | 'promotions'
+  | 'certificates'
+  | 'instagram'
+  | 'newsletter'
+  | 'hours'
+  | 'brands';
 
 export type Locale = 'en' | 'fr' | 'de' | 'ru';
 
@@ -177,6 +187,77 @@ export interface StatItem {
   label: string;
 }
 
+// ─── New section config types ────────────────────────────────────────────────
+
+export interface ProcessStep {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface BeforeAfterItem {
+  before: string;
+  after: string;
+  label?: string;
+}
+
+export interface VideoConfig {
+  url: string;
+  poster?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+export interface PromotionItem {
+  title: string;
+  description: string;
+  badge?: string;
+  expiresAt?: string;
+  href?: string;
+}
+
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  year?: string;
+  icon?: string;
+  image?: string;
+}
+
+export interface InstagramPost {
+  image: string;
+  url?: string;
+  likes?: number;
+  caption?: string;
+}
+
+export interface NewsletterConfig {
+  heading?: string;
+  subtitle?: string;
+  provider?: string;
+}
+
+export interface BrandItem {
+  name: string;
+  logo?: string;
+  description?: string;
+  url?: string;
+}
+
+export interface BookingService {
+  name: string;
+  duration: string;
+  price: string;
+}
+
+export interface BookingConfig {
+  heading?: string;
+  subtitle?: string;
+  services: BookingService[];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export interface SiteConfig {
   business: BusinessInfo;
   hero: HeroConfig;
@@ -197,6 +278,16 @@ export interface SiteConfig {
   stats?: StatItem[];
   blog?: BlogPost[];
   legal?: LegalConfig;
+  // New sections
+  process?: ProcessStep[];
+  beforeAfter?: BeforeAfterItem[];
+  video?: VideoConfig;
+  promotions?: PromotionItem[];
+  certificates?: CertificateItem[];
+  instagramPosts?: InstagramPost[];
+  newsletter?: NewsletterConfig;
+  brands?: BrandItem[];
+  booking?: BookingConfig;
   sections: SectionId[];
   defaultLocale: Locale;
   availableLocales: Locale[];

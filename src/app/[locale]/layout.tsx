@@ -42,9 +42,7 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        siteConfig.availableLocales.map((loc) => [loc, `/${loc}`]),
-      ),
+      languages: Object.fromEntries(siteConfig.availableLocales.map((loc) => [loc, `/${loc}`])),
     },
     openGraph: {
       title: t('title'),
@@ -74,15 +72,19 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Validate locale
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className="font-body antialiased">
+    <html
+      lang={locale}
+      className={`${inter.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-body antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <CartProvider>
             <ToastProvider>

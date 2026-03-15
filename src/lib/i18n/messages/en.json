@@ -215,6 +215,112 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
+  "video": {
+    "overline": "Watch Us Work",
+    "heading": "Behind the Scenes",
+    "subtitle": "See how we craft each arrangement — from first bloom to final bow.",
+    "body": "Every arrangement starts with a conversation. We source the freshest seasonal flowers, then our florists handcraft each piece with care and precision.",
+    "play": "Play video",
+    "mute": "Mute",
+    "unmute": "Unmute"
+  },
+  "beforeAfter": {
+    "overline": "Transformations",
+    "heading": "See the Difference",
+    "subtitle": "From bare spaces to stunning floral displays — here's what we create.",
+    "before": "Before",
+    "after": "After",
+    "hoverHint": "Hover to reveal",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "promotions": {
+    "overline": "Special Offers",
+    "heading": "Deals You'll Love",
+    "subtitle": "Limited-time offers and seasonal promotions — don't miss out.",
+    "expires": "Expires",
+    "claimButton": "Claim Offer",
+    "badgeNew": "New",
+    "badgeHot": "Hot",
+    "days": "Days",
+    "hours": "Hrs",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "newsletter": {
+    "overline": "Newsletter",
+    "heading": "Stay in Bloom",
+    "subtitle": "Seasonal inspiration, exclusive offers, and care tips straight to your inbox.",
+    "placeholder": "your@email.com",
+    "placeholderName": "Your name",
+    "labelEmail": "Email address",
+    "labelName": "First name",
+    "submit": "Subscribe",
+    "successMessage": "You're subscribed — welcome!",
+    "privacyNote": "No spam. Unsubscribe at any time.",
+    "formHeading": "Join our newsletter",
+    "formSubtitle": "Get the first look at new collections and seasonal promotions.",
+    "perk1": "Early access to seasonal collections and new arrivals",
+    "perk2": "Exclusive subscriber discounts and giveaways",
+    "perk3": "Flower care tips and arrangement inspiration every month"
+  },
+  "booking": {
+    "overline": "Book an Appointment",
+    "heading": "Reserve Your Slot",
+    "subtitle": "Pick a service and reach out — we'll confirm your booking within the hour.",
+    "selectedLabel": "Your selection",
+    "duration": "Duration",
+    "price": "Price",
+    "contactPrompt": "Contact us to confirm your booking:",
+    "cta": "Book Now",
+    "ctaCardHeading": "Ready to Book?",
+    "ctaCardBody": "Contact us and we'll confirm your slot within the hour.",
+    "step1": "Service",
+    "step2": "Details",
+    "step3": "Confirm",
+    "step1Label": "Choose a service",
+    "step2Label": "Your details",
+    "fieldName": "Name",
+    "fieldNamePlaceholder": "Your name",
+    "fieldPhone": "Phone",
+    "fieldPhonePlaceholder": "+1 ...",
+    "fieldDate": "Preferred date",
+    "fieldNote": "Notes (optional)",
+    "fieldNotePlaceholder": "Any special requests?",
+    "next": "Next",
+    "back": "Back",
+    "confirmTitle": "Request Received!",
+    "confirmBody": "Thank you — we'll confirm your appointment by phone or email shortly.",
+    "bookAnother": "Book Another"
+  },
+  "process": {
+    "overline": "How It Works",
+    "heading": "Simple Steps to Your Perfect Arrangement",
+    "subtitle": "From first idea to your door — here's how easy it is to order from us."
+  },
+  "instagram": {
+    "overline": "Instagram",
+    "heading": "Follow Our Story",
+    "post": "Instagram post",
+    "followButton": "Follow Us"
+  },
+  "certificates": {
+    "overline": "Certifications",
+    "heading": "Awards & Recognition",
+    "subtitle": "We are proud to be recognised for our craft, sustainability, and commitment to excellence."
+  },
+  "brands": {
+    "overline": "Our Partners",
+    "heading": "Brands We Work With",
+    "subtitle": "We collaborate with carefully chosen partners who share our commitment to quality and sustainability."
+  },
+  "notFound": {
+    "code": "404",
+    "heading": "Page Not Found",
+    "subtitle": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home",
+    "browseGallery": "Browse Gallery"
+  },
   "meta": {
     "title": "Fleur & Co — Artisanal Florist in Nice",
     "description": "Handcrafted flower arrangements for weddings, events, and everyday joy."

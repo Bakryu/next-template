@@ -17,8 +17,17 @@ import { PricingSection } from '@/components/sections/Pricing';
 import { FeaturesSection } from '@/components/sections/Features';
 import { PartnersSection } from '@/components/sections/Partners';
 import { StatsSection } from '@/components/sections/Stats';
+import { ProcessSection } from '@/components/sections/Process';
+import { BookingSection } from '@/components/sections/Booking';
+import { NewsletterSection } from '@/components/sections/Newsletter';
+import { PromotionsSection } from '@/components/sections/Promotions';
+import { BeforeAfterSection } from '@/components/sections/BeforeAfter';
+import { VideoSection } from '@/components/sections/Video';
+import { InstagramSection } from '@/components/sections/Instagram';
+import { CertificatesSection } from '@/components/sections/Certificates';
+import { BrandsSection } from '@/components/sections/Brands';
 
-const sectionComponents: Record<SectionId, React.ComponentType> = {
+const sectionComponents: Partial<Record<SectionId, React.ComponentType>> = {
   hero: HeroSection,
   services: ServicesSection,
   about: AboutSection,
@@ -33,6 +42,15 @@ const sectionComponents: Record<SectionId, React.ComponentType> = {
   features: FeaturesSection,
   partners: PartnersSection,
   stats: StatsSection,
+  process: ProcessSection,
+  booking: BookingSection,
+  newsletter: NewsletterSection,
+  promotions: PromotionsSection,
+  beforeAfter: BeforeAfterSection,
+  video: VideoSection,
+  instagram: InstagramSection,
+  certificates: CertificatesSection,
+  brands: BrandsSection,
 };
 
 export default function HomePage() {

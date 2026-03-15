@@ -16,6 +16,6 @@ export interface SectionDefinition {
 export function getHomepageSections(): SectionDefinition[] {
   return siteConfig.sections.map((id) => ({
     id,
-    isClient: ['gallery', 'testimonials', 'faq', 'contact', 'map', 'team', 'pricing', 'features', 'partners', 'stats'].includes(id),
+    isClient: ['gallery', 'testimonials', 'faq', 'contact', 'map', 'team', 'pricing', 'features', 'partners', 'stats', 'process', 'booking', 'newsletter', 'promotions', 'beforeAfter', 'video', 'instagram', 'certificates', 'brands'].includes(id),
   }));
 }
