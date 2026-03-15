@@ -3,9 +3,10 @@
 import React from 'react';
 import { Link } from '@/lib/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { ShoppingBag, ArrowLeft, Section } from 'lucide-react';
+import { ShoppingBag, ArrowLeft } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { Container } from '@/components/layout/Container';
+import { Section } from '@/components/layout/Section';
 import { CartItem } from '@/components/cart/CartItem';
 import { CartSummary } from '@/components/cart/CartSummary';
 import { Button } from '@/components/ui/Button';
@@ -52,15 +53,17 @@ export default function CartPage() {
           <Typography variant="h1" className="mt-3">
             {t('title')} ({totalItems})
           </Typography>
-          <div className="mt-4 h-0.5 w-12 bg-gradient-to-r from-secondary to-transparent" />
+          <div className="from-secondary mt-4 h-0.5 w-12 bg-gradient-to-r to-transparent" />
         </div>
 
         {items.length === 0 ? (
           <div className="flex flex-col items-center py-24">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-muted">
-              <ShoppingBag className="h-8 w-8 text-muted-foreground/40" />
+            <div className="bg-muted flex h-20 w-20 items-center justify-center rounded-full">
+              <ShoppingBag className="text-muted-foreground/40 h-8 w-8" />
             </div>
-            <Typography variant="subtitle1" className="mt-6">{t('empty')}</Typography>
+            <Typography variant="subtitle1" className="mt-6">
+              {t('empty')}
+            </Typography>
             <Button variant="outline" rounded="full" className="mt-8 gap-2" asChild>
               <Link href="/gallery">
                 <ArrowLeft className="h-4 w-4" />
@@ -72,14 +75,14 @@ export default function CartPage() {
           <div className="grid gap-10 lg:grid-cols-12">
             {/* Cart Items */}
             <div className="lg:col-span-8">
-              <div className="divide-y divide-border/40 rounded-2xl border border-border/50 bg-card p-6 shadow-sm">
+              <div className="divide-border/40 border-border/50 bg-card divide-y rounded-2xl border p-6 shadow-sm">
                 {items.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
               </div>
 
               <div className="mt-5">
-                <Button variant="ghost" className="gap-2 text-muted-foreground" asChild>
+                <Button variant="ghost" className="text-muted-foreground gap-2" asChild>
                   <Link href="/gallery">
                     <ArrowLeft className="h-4 w-4" />
                     {t('continueShopping')}

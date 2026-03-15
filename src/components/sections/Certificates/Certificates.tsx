@@ -9,6 +9,7 @@ import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Typography, MotionTypography } from '@/components/ui/Typography';
 import { Badge } from '@/components/ui/Badge';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 /**
  * Certificates V1 — Light grid of award cards.
@@ -36,8 +37,31 @@ export function CertificatesSection() {
           </MotionTypography>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile carousel */}
+        <MobileCarousel slideWidth="w-[78vw]" className="-mx-4 sm:hidden">
+          {items.map((cert, i) => (
+            <div
+              key={i}
+              className="border-border flex h-full flex-col items-start gap-4 rounded-2xl border bg-white p-6 shadow-sm"
+            >
+              <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-xl">
+                <Award className="text-primary h-6 w-6" />
+              </div>
+              <div className="flex-1">
+                <Typography variant="h5" className="leading-snug">
+                  {cert.title}
+                </Typography>
+                <Typography variant="body2" className="text-muted mt-1">
+                  {cert.issuer}
+                </Typography>
+              </div>
+              <Badge variant="secondary">{cert.year}</Badge>
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Desktop grid */}
+        <div className="hidden grid-cols-1 gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {items.map((cert, i) => (
             <motion.div
               key={i}

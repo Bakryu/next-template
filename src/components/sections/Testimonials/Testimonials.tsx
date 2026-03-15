@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Typography } from '@/components/ui/Typography';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 export function TestimonialsSection() {
   const t = useTranslations('testimonials');
@@ -33,7 +34,50 @@ export function TestimonialsSection() {
           </Typography>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile carousel */}
+        <MobileCarousel slideWidth="w-[85vw]" className="-mx-4 md:hidden">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="border-border/40 bg-card relative overflow-hidden rounded-2xl border p-8"
+            >
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-3.5 w-3.5 ${i < testimonial.rating ? 'fill-secondary text-secondary' : 'fill-muted text-muted'}`}
+                  />
+                ))}
+              </div>
+              <Typography className="text-foreground font-heading mt-6 leading-[1.8]" italic>
+                &ldquo;{testimonial.content}&rdquo;
+              </Typography>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="from-secondary/20 to-accent/10 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br">
+                  <span className="text-secondary text-sm font-bold">
+                    {testimonial.name.charAt(0)}
+                  </span>
+                </div>
+                <div>
+                  <Typography variant="small" weight="semibold">
+                    {testimonial.name}
+                  </Typography>
+                  {testimonial.role && (
+                    <Typography variant="caption" color="muted">
+                      {testimonial.role}
+                    </Typography>
+                  )}
+                </div>
+              </div>
+              <div className="font-heading text-secondary/5 absolute -top-2 -right-2 text-8xl select-none">
+                &ldquo;
+              </div>
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Desktop grid */}
+        <div className="hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -45,44 +89,37 @@ export function TestimonialsSection() {
                 delay: index * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 transition-all duration-500 hover:shadow-lg hover:border-secondary/20"
+              className="group border-border/40 bg-card hover:border-secondary/20 relative overflow-hidden rounded-2xl border p-8 transition-all duration-500 hover:shadow-lg"
             >
-              {/* Rating */}
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-3.5 w-3.5 ${
-                      i < testimonial.rating
-                        ? 'fill-secondary text-secondary'
-                        : 'fill-muted text-muted'
-                    }`}
+                    className={`h-3.5 w-3.5 ${i < testimonial.rating ? 'fill-secondary text-secondary' : 'fill-muted text-muted'}`}
                   />
                 ))}
               </div>
-
-              {/* Quote */}
-              <Typography className="mt-6 text-foreground leading-[1.8] font-heading" italic>
+              <Typography className="text-foreground font-heading mt-6 leading-[1.8]" italic>
                 &ldquo;{testimonial.content}&rdquo;
               </Typography>
-
-              {/* Author */}
               <div className="mt-8 flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-secondary/20 to-accent/10">
-                  <span className="text-sm font-bold text-secondary">
+                <div className="from-secondary/20 to-accent/10 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br">
+                  <span className="text-secondary text-sm font-bold">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <Typography variant="small" weight="semibold">{testimonial.name}</Typography>
+                  <Typography variant="small" weight="semibold">
+                    {testimonial.name}
+                  </Typography>
                   {testimonial.role && (
-                    <Typography variant="caption" color="muted">{testimonial.role}</Typography>
+                    <Typography variant="caption" color="muted">
+                      {testimonial.role}
+                    </Typography>
                   )}
                 </div>
               </div>
-
-              {/* Decorative quote mark */}
-              <div className="absolute -right-2 -top-2 text-8xl font-heading text-secondary/5 select-none">
+              <div className="font-heading text-secondary/5 absolute -top-2 -right-2 text-8xl select-none">
                 &ldquo;
               </div>
             </motion.div>

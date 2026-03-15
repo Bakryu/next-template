@@ -3,8 +3,9 @@
 import React from 'react';
 import { Link } from '@/lib/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { X, Globe } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
 import { Navigation } from '../Navigation';
 import { navigationConfig } from '@/config/navigation.config';
@@ -19,6 +20,18 @@ export interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLocaleChange = (newLocale: string) => {
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    router.push(segments.join('/'));
+    onClose();
+  };
+
+  const localeLabels: Record<string, string> = { en: 'EN', fr: 'FR', de: 'DE', ru: 'RU' };
 
   return (
     <AnimatePresence>
@@ -30,7 +43,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-overlay backdrop-blur-sm lg:hidden"
+            className="bg-overlay fixed inset-0 z-40 backdrop-blur-sm lg:hidden"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -42,8 +55,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             className={cn(
-              'fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-background/95 backdrop-blur-2xl lg:hidden',
-              'flex flex-col border-l border-border/50',
+              'bg-background/95 fixed inset-y-0 right-0 z-50 w-full max-w-sm backdrop-blur-2xl lg:hidden',
+              'border-border/50 flex flex-col border-l',
             )}
           >
             {/* Header */}
@@ -53,7 +66,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </Typography>
               <button
                 onClick={onClose}
-                className="rounded-full p-2.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:bg-muted hover:text-foreground rounded-full p-2.5 transition-colors"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -61,11 +74,35 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </div>
 
             {/* Divider */}
-            <div className="mx-6 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+            <div className="via-border mx-6 h-px bg-gradient-to-r from-transparent to-transparent" />
 
             {/* Navigation */}
             <div className="flex-1 overflow-y-auto px-6 py-8">
               <Navigation orientation="vertical" isScrolled={true} onItemClick={onClose} />
+            </div>
+
+            {/* Locale switcher */}
+            <div className="mx-6 mb-4">
+              <div className="via-border mx-0 mb-4 h-px bg-gradient-to-r from-transparent to-transparent" />
+              <div className="flex items-center gap-2">
+                <Globe className="text-muted-foreground h-4 w-4 shrink-0" />
+                <div className="flex gap-1">
+                  {siteConfig.availableLocales.map((loc) => (
+                    <button
+                      key={loc}
+                      onClick={() => handleLocaleChange(loc)}
+                      className={cn(
+                        'rounded-full px-3 py-1 text-xs font-medium transition-colors',
+                        loc === locale
+                          ? 'bg-primary text-primary-foreground'
+                          : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                      )}
+                    >
+                      {localeLabels[loc] || loc.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* CTA */}

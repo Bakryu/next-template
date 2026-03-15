@@ -21,6 +21,7 @@ import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Typography, MotionTypography } from '@/components/ui/Typography';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   zap: Zap,
@@ -61,7 +62,28 @@ export function FeaturesSection() {
           </MotionTypography>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile carousel */}
+        <MobileCarousel slideWidth="w-[78vw]" className="-mx-4 sm:hidden">
+          {features.map((feature, index) => {
+            const Icon = iconMap[feature.icon] || Sparkles;
+            return (
+              <div key={index} className="group border-border/40 bg-card rounded-2xl border p-8">
+                <div className="bg-secondary/10 text-secondary mb-5 flex h-12 w-12 items-center justify-center rounded-xl">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <Typography variant="h3" className="text-lg">
+                  {feature.name}
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2 leading-relaxed">
+                  {feature.description}
+                </Typography>
+              </div>
+            );
+          })}
+        </MobileCarousel>
+
+        {/* Desktop grid */}
+        <div className="hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = iconMap[feature.icon] || Sparkles;
             return (
@@ -75,13 +97,15 @@ export function FeaturesSection() {
                   delay: index * 0.06,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group rounded-2xl border border-border/40 bg-card p-8 transition-all duration-500 hover:shadow-lg hover:border-secondary/20"
+                className="group border-border/40 bg-card hover:border-secondary/20 rounded-2xl border p-8 transition-all duration-500 hover:shadow-lg"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-colors duration-300 group-hover:bg-secondary group-hover:text-secondary-foreground">
+                <div className="bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300">
                   <Icon className="h-6 w-6" />
                 </div>
-                <Typography variant="h3" className="text-lg">{feature.name}</Typography>
-                <Typography variant="body2" className="mt-2 text-muted-foreground leading-relaxed">
+                <Typography variant="h3" className="text-lg">
+                  {feature.name}
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2 leading-relaxed">
                   {feature.description}
                 </Typography>
               </motion.div>

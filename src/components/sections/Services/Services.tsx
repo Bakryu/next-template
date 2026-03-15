@@ -22,6 +22,7 @@ import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Badge } from '@/components/ui/Badge';
 import { Typography } from '@/components/ui/Typography';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   heart: Heart,
@@ -62,7 +63,37 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services grid — editorial asymmetric layout */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+        {/* Mobile carousel */}
+        <MobileCarousel slideWidth="w-[78vw]" className="-mx-4 sm:hidden">
+          {services.map((service, index) => {
+            const Icon = iconMap[service.icon] || Star;
+            return (
+              <div
+                key={index}
+                className="group border-border/50 bg-card relative h-full overflow-hidden rounded-2xl border p-7"
+              >
+                <div className="bg-secondary/10 mb-5 flex h-12 w-12 items-center justify-center rounded-xl">
+                  <Icon className="text-secondary h-5 w-5" />
+                </div>
+                <Typography variant="h3">{service.name}</Typography>
+                <Typography className="text-muted-foreground mt-2">
+                  {service.description}
+                </Typography>
+                {service.price && (
+                  <div className="mt-5">
+                    <Badge variant="secondary" size="sm">
+                      {service.price}
+                    </Badge>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </MobileCarousel>
+
+        {/* Desktop grid */}
+        <div className="hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon] || Star;
             return (
@@ -76,14 +107,13 @@ export function ServicesSection() {
                   delay: index * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card p-7 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-secondary/30"
+                className="group border-border/50 bg-card hover:border-secondary/30 relative overflow-hidden rounded-2xl border p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
               >
-
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 transition-colors duration-300 group-hover:bg-secondary/20">
-                  <Icon className="h-5 w-5 text-secondary" />
+                <div className="bg-secondary/10 group-hover:bg-secondary/20 mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300">
+                  <Icon className="text-secondary h-5 w-5" />
                 </div>
                 <Typography variant="h3">{service.name}</Typography>
-                <Typography className="mt-2 text-muted-foreground">
+                <Typography className="text-muted-foreground mt-2">
                   {service.description}
                 </Typography>
                 {service.price && (

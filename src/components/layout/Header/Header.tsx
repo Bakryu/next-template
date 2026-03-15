@@ -37,10 +37,10 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-[var(--z-header)] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+          'fixed top-0 right-0 left-0 z-[var(--z-header)] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
           isTransparent
             ? 'bg-transparent'
-            : 'border-b border-border/50 bg-background/80 backdrop-blur-2xl shadow-sm',
+            : 'border-border/50 bg-background/80 border-b shadow-sm backdrop-blur-2xl',
         )}
       >
         <Container>
@@ -49,9 +49,9 @@ export function Header() {
             <Link
               href="/"
               className={cn(
-                'text-xl font-bold font-heading tracking-tight transition-colors duration-300',
+                'font-heading text-xl font-bold tracking-tight transition-colors duration-300',
                 isTransparent
-                  ? 'text-white hover:text-secondary'
+                  ? 'hover:text-secondary text-white'
                   : 'text-foreground hover:text-secondary',
               )}
             >
@@ -63,7 +63,13 @@ export function Header() {
               <Navigation isScrolled={!isTransparent} />
 
               <div className="ml-6 flex items-center gap-3 border-l border-current/10 pl-6">
-                <LocaleSwitcher />
+                <LocaleSwitcher
+                  className={
+                    isTransparent
+                      ? 'text-white/80 hover:bg-white/10 hover:text-white'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  }
+                />
 
                 {/* Cart */}
                 <Link
@@ -78,7 +84,7 @@ export function Header() {
                 >
                   <ShoppingBag className="h-5 w-5" />
                   {totalItems > 0 && (
-                    <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                    <span className="bg-secondary text-secondary-foreground absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold">
                       {totalItems}
                     </span>
                   )}
@@ -97,7 +103,13 @@ export function Header() {
 
             {/* Mobile controls */}
             <div className="flex items-center gap-2 lg:hidden">
-              <LocaleSwitcher />
+              <LocaleSwitcher
+                className={
+                  isTransparent
+                    ? 'text-white/80 hover:bg-white/10 hover:text-white'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                }
+              />
 
               <Link
                 href="/cart"
@@ -111,7 +123,7 @@ export function Header() {
               >
                 <ShoppingBag className="h-5 w-5" />
                 {totalItems > 0 && (
-                  <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                  <span className="bg-secondary text-secondary-foreground absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold">
                     {totalItems}
                   </span>
                 )}

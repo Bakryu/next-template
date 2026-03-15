@@ -22,7 +22,7 @@ export function Footer() {
   return (
     <footer className="border-border/40 bg-foreground text-background relative border-t">
       <Container>
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:py-20">
+        <div className="grid gap-12 py-16 lg:grid-cols-12 lg:py-20">
           {/* Brand */}
           <div className="space-y-6 lg:col-span-4">
             <Typography variant="h4" as="h3" weight="bold">
@@ -53,59 +53,62 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="lg:col-span-2 lg:col-start-6">
-            <Typography variant="overline" as="h4" className="text-background/40 mb-5">
-              {t('footer.navigation')}
-            </Typography>
-            <ul className="space-y-3">
-              {navigationConfig.items.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-background/60 hover:text-secondary text-sm transition-colors duration-300"
-                  >
-                    {t(item.translationKey)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Navigation + Contact — side by side on mobile, separate cols on desktop */}
+          <div className="grid grid-cols-2 gap-8 lg:col-span-5 lg:col-start-6 lg:grid-cols-2 lg:gap-0">
+            {/* Navigation */}
+            <div className="lg:col-span-1">
+              <Typography variant="overline" as="h4" className="text-background/40 mb-5">
+                {t('footer.navigation')}
+              </Typography>
+              <ul className="space-y-3">
+                {navigationConfig.items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-background/60 hover:text-secondary text-sm transition-colors duration-300"
+                    >
+                      {t(item.translationKey)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact Info */}
-          <div className="lg:col-span-3">
-            <Typography variant="overline" as="h4" className="text-background/40 mb-5">
-              {t('footer.contact')}
-            </Typography>
-            <ul className="space-y-4">
-              <li className="text-background/60 flex items-start gap-3 text-sm">
-                <MapPin className="text-secondary/60 mt-0.5 h-4 w-4 shrink-0" />
-                {business.address || business.location}
-              </li>
-              <li>
-                <a
-                  href={`tel:${business.phone}`}
-                  className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
-                >
-                  <Phone className="text-secondary/60 h-4 w-4 shrink-0" />
-                  {business.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${business.email}`}
-                  className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
-                >
-                  <Mail className="text-secondary/60 h-4 w-4 shrink-0" />
-                  {business.email}
-                </a>
-              </li>
-            </ul>
+            {/* Contact Info */}
+            <div className="lg:col-span-1">
+              <Typography variant="overline" as="h4" className="text-background/40 mb-5">
+                {t('footer.contact')}
+              </Typography>
+              <ul className="space-y-4">
+                <li className="text-background/60 flex items-start gap-3 text-sm">
+                  <MapPin className="text-secondary/60 mt-0.5 h-4 w-4 shrink-0" />
+                  {business.address || business.location}
+                </li>
+                <li>
+                  <a
+                    href={`tel:${business.phone}`}
+                    className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
+                  >
+                    <Phone className="text-secondary/60 h-4 w-4 shrink-0" />
+                    {business.phone}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${business.email}`}
+                    className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
+                  >
+                    <Mail className="text-secondary/60 h-4 w-4 shrink-0" />
+                    {business.email}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Hours */}
           {business.openingHours && (
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 lg:col-start-auto">
               <Typography variant="overline" as="h4" className="text-background/40 mb-5">
                 {t('footer.hours')}
               </Typography>

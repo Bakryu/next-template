@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Typography, MotionTypography } from '@/components/ui/Typography';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 /**
  * Brands V1 — Clean logo grid.
@@ -35,8 +36,37 @@ export function BrandsSection() {
           </MotionTypography>
         </div>
 
-        {/* Logo grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {/* Mobile carousel */}
+        <MobileCarousel slideWidth="w-[40vw]" className="-mx-4 sm:hidden">
+          {items.map((brand, i) => (
+            <div
+              key={i}
+              className="border-border flex aspect-square items-center justify-center rounded-xl border bg-white p-5"
+            >
+              {brand.logo ? (
+                <div className="relative h-8 w-full opacity-60 grayscale">
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    fill
+                    className="object-contain"
+                    sizes="40vw"
+                  />
+                </div>
+              ) : (
+                <Typography
+                  variant="label"
+                  className="text-muted text-center text-xs font-semibold"
+                >
+                  {brand.name}
+                </Typography>
+              )}
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Desktop grid */}
+        <div className="hidden grid-cols-2 gap-4 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {items.map((brand, i) => (
             <motion.div
               key={i}

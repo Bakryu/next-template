@@ -65,7 +65,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45 }}
-              className="mt-8 flex flex-wrap items-center gap-4"
+              className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
             >
               <Button size="lg" variant="secondary" rounded="full" className="group gap-2" asChild>
                 <Link href={hero.cta.href}>
@@ -77,7 +77,7 @@ export function HeroSection() {
               {hero.secondaryCta && (
                 <Button
                   size="lg"
-                  variant="ghost"
+                  variant="destructive"
                   rounded="full"
                   className="gap-2 text-white/70 hover:bg-white/10 hover:text-white"
                   asChild

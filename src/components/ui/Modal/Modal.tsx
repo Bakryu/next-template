@@ -60,7 +60,7 @@ export function Modal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className={cn('absolute inset-0 bg-overlay', overlayClassName)}
+            className={cn('bg-overlay absolute inset-0', overlayClassName)}
             onClick={closeOnOverlayClick ? onClose : undefined}
             aria-hidden="true"
           />
@@ -76,17 +76,17 @@ export function Modal({
             aria-label={title}
             aria-describedby={description ? 'modal-description' : undefined}
             className={cn(
-              'relative z-10 w-full max-w-lg rounded-xl bg-card p-6 shadow-xl',
+              'bg-card relative z-10 w-full max-w-lg rounded-xl p-6 shadow-xl',
               className,
             )}
           >
             {/* Header */}
             {(title || showCloseButton) && (
-              <div className="mb-4 flex items-start justify-between">
+              <div className="flex items-start justify-between p-3">
                 <div>
                   {title && <h2 className="text-lg font-semibold">{title}</h2>}
                   {description && (
-                    <p id="modal-description" className="mt-1 text-sm text-muted-foreground">
+                    <p id="modal-description" className="text-muted-foreground mt-1 text-sm">
                       {description}
                     </p>
                   )}
@@ -94,7 +94,7 @@ export function Modal({
                 {showCloseButton && (
                   <button
                     onClick={onClose}
-                    className="rounded-base p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    className="rounded-base text-muted-foreground hover:bg-muted hover:text-foreground p-1 transition-colors"
                     aria-label="Close modal"
                   >
                     <X className="h-5 w-5" />

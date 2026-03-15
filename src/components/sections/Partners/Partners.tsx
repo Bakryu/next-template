@@ -40,9 +40,14 @@ export function PartnersSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex h-16 items-center justify-center px-4 grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+              className="group flex h-16 items-center justify-center px-4 transition-all duration-300"
             >
-              <Typography variant="large" as="span" weight="bold" className="font-heading text-foreground whitespace-nowrap">
+              <Typography
+                variant="large"
+                as="span"
+                weight="bold"
+                className="font-heading text-muted-foreground/60 group-hover:text-foreground whitespace-nowrap transition-colors duration-300"
+              >
                 {partner.name}
               </Typography>
             </motion.div>
