@@ -60,7 +60,15 @@ export function MapSectionV2() {
             </div>
             <div className="flex items-center gap-3">
               <Clock className="h-4 w-4 shrink-0 text-secondary" />
-              <Typography variant="small" as="span">Mon – Sat: 9am – 6pm</Typography>
+              {business.openingHours ? (
+                <Typography variant="small" as="span">
+                  {business.openingHours
+                    .filter((h) => !h.closed)
+                    .slice(0, 1)
+                    .map((h) => `${h.day}: ${h.open} – ${h.close}`)
+                    .join(', ')}
+                </Typography>
+              ) : null}
             </div>
           </div>
         </motion.div>

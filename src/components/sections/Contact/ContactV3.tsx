@@ -43,7 +43,7 @@ export function ContactSectionV3() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">Address</Typography>
+                  <Typography variant="label" as="p">{t('addressLabel')}</Typography>
                   <Typography variant="body2" className="mt-1 opacity-60">{business.address || business.location}</Typography>
                 </div>
               </div>
@@ -53,7 +53,7 @@ export function ContactSectionV3() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">Phone</Typography>
+                  <Typography variant="label" as="p">{t('phoneLabel')}</Typography>
                   <Typography variant="body2" className="mt-1 opacity-60">{business.phone}</Typography>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export function ContactSectionV3() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">Email</Typography>
+                  <Typography variant="label" as="p">{t('emailLabel')}</Typography>
                   <Typography variant="body2" className="mt-1 opacity-60">{business.email}</Typography>
                 </div>
               </div>
@@ -73,8 +73,16 @@ export function ContactSectionV3() {
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">Opening Hours</Typography>
-                  <Typography variant="body2" className="mt-1 opacity-60">Mon – Sat: 9am – 6pm</Typography>
+                  <Typography variant="label" as="p">{t('hoursLabel')}</Typography>
+                  {business.openingHours ? (
+                    <div className="mt-1 space-y-1">
+                      {business.openingHours.slice(0, 3).map((h) => (
+                        <Typography key={h.day} variant="body2" className="opacity-60">
+                          {h.day}: {h.closed ? t('info.closed') : `${h.open} – ${h.close}`}
+                        </Typography>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>

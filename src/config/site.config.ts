@@ -66,6 +66,25 @@ export const siteConfig: SiteConfig = {
       'Founded in 2018, Fleur & Co brings the beauty of artisanal floristry to the French Riviera. Every arrangement is handcrafted with locally-sourced, seasonal flowers.',
       'Our team of experienced florists combines traditional techniques with modern design to create stunning arrangements that tell a story.',
     ],
+    mission:
+      'We believe that flowers have the power to transform spaces and uplift spirits. Our mission is to bring the beauty of nature into everyday life through thoughtfully crafted, sustainable floral arrangements that celebrate every occasion.',
+    values: [
+      {
+        title: 'Quality First',
+        description:
+          'We source only the freshest, highest-quality flowers from trusted local and international growers.',
+      },
+      {
+        title: 'Sustainable Practices',
+        description:
+          'We are committed to eco-friendly practices, from biodegradable packaging to seasonal sourcing.',
+      },
+      {
+        title: 'Personal Touch',
+        description:
+          'Every arrangement is handcrafted with care and customized to reflect your unique style and occasion.',
+      },
+    ],
     stats: [
       { label: 'Years of Experience', value: '8+' },
       { label: 'Happy Customers', value: '2,500+' },
@@ -256,6 +275,67 @@ export const siteConfig: SiteConfig = {
   ],
 
   sections: ['hero', 'features', 'services', 'stats', 'about', 'gallery', 'team', 'pricing', 'testimonials', 'partners', 'faq', 'cta', 'contact'],
+
+  blog: [
+    {
+      id: '1',
+      title: 'How to Choose the Perfect Wedding Bouquet',
+      excerpt:
+        'Your wedding bouquet is one of the most important floral elements of your big day. Here are our tips for choosing the perfect one.',
+      date: '2026-03-01',
+      category: 'Weddings',
+      readTime: '5 min',
+    },
+    {
+      id: '2',
+      title: "Seasonal Flowers Guide: What's in Season Right Now",
+      excerpt:
+        'Discover which flowers are at their peak this season and how to incorporate them into your arrangements.',
+      date: '2026-02-20',
+      category: 'Tips',
+      readTime: '4 min',
+    },
+    {
+      id: '3',
+      title: 'How to Make Fresh Flowers Last Longer',
+      excerpt:
+        'Simple tips and tricks to extend the life of your cut flowers and keep them looking beautiful for days.',
+      date: '2026-02-10',
+      category: 'Tips',
+      readTime: '3 min',
+    },
+    {
+      id: '4',
+      title: 'Event Decoration Trends for 2026',
+      excerpt:
+        'From minimalist elegance to bold color palettes — explore the top floral decoration trends this year.',
+      date: '2026-01-28',
+      category: 'Events',
+      readTime: '6 min',
+    },
+    {
+      id: '5',
+      title: 'The Language of Flowers: What Each Flower Means',
+      excerpt:
+        'Every flower carries a meaning. Learn the symbolism behind popular blooms and choose arrangements that tell a story.',
+      date: '2026-01-15',
+      category: 'Education',
+      readTime: '7 min',
+    },
+    {
+      id: '6',
+      title: 'Behind the Scenes: A Day at Our Flower Shop',
+      excerpt:
+        'Take a peek behind the curtain and see what goes into creating our signature arrangements every day.',
+      date: '2026-01-05',
+      category: 'About Us',
+      readTime: '4 min',
+    },
+  ],
+
+  legal: {
+    lastUpdated: 'March 1, 2026',
+  },
 
   defaultLocale: 'en',
   availableLocales: ['en', 'fr', 'de', 'ru'],

@@ -44,15 +44,24 @@
   },
   "faq": {
     "title": "Questions Fréquentes",
-    "subtitle": "Trouvez des réponses aux questions courantes."
+    "subtitle": "Trouvez des réponses aux questions courantes.",
+    "overline": "FAQ"
   },
   "cta": {
     "title": "Prêt à illuminer votre espace ?",
-    "button": "Commencer"
+    "button": "Commencer",
+    "heading": "Prêt à illuminer votre espace ?",
+    "subheading": "Commandez votre arrangement personnalisé ou démarrez un abonnement hebdomadaire."
   },
   "contact": {
     "title": "Contactez-nous",
     "successMessage": "Merci ! Votre message a été envoyé.",
+    "visitUsLabel": "Nous Rendre Visite",
+    "directionsButton": "Obtenir l'itinéraire",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Téléphone",
+    "emailLabel": "Email",
+    "hoursLabel": "Heures d'ouverture",
     "form": {
       "name": "Nom",
       "namePlaceholder": "Votre nom",
@@ -80,7 +89,10 @@
   "pricing": {
     "title": "Tarifs",
     "subtitle": "Choisissez le plan parfait pour vous.",
+    "description": "",
     "popular": "Populaire",
+    "popularLabel": "Le plus populaire",
+    "selectButton": "Commencer",
     "getStarted": "Commencer"
   },
   "features": {
@@ -96,16 +108,67 @@
     "subtitle": "Des chiffres qui parlent d'eux-mêmes."
   },
   "blog": {
-    "title": "Blog"
+    "title": "Blog",
+    "heading": "Actualités & Conseils",
+    "subtitle": "Astuces, tendances et histoires de notre atelier floral.",
+    "readMore": "Lire la suite"
   },
   "aboutPage": {
-    "title": "À propos"
+    "title": "À propos",
+    "heading": "À Propos de Nous",
+    "overline": "À Propos",
+    "missionHeading": "Notre Mission",
+    "visitHeading": "Nous Rendre Visite",
+    "addressLabel": "Adresse",
+    "contactLabel": "Contact",
+    "hoursLabel": "Heures d'ouverture",
+    "closed": "Fermé"
   },
   "privacy": {
-    "title": "Politique de confidentialité"
+    "title": "Politique de confidentialité",
+    "heading": "Politique de Confidentialité",
+    "overline": "Légal",
+    "lastUpdated": "Dernière mise à jour",
+    "s1Title": "1. Introduction",
+    "s1Body": "{name} s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web.",
+    "s2Title": "2. Informations que nous collectons",
+    "s2Intro": "Nous pouvons collecter des informations vous concernant de différentes manières :",
+    "s2Item1": "Données personnelles : nom, adresse e-mail, numéro de téléphone et adresse de livraison lors d'une commande.",
+    "s2Item2": "Informations de paiement : traitées de manière sécurisée par notre prestataire — nous ne stockons pas les données de carte.",
+    "s2Item3": "Données d'utilisation : pages visitées, temps passé, type de navigateur et pages de référence.",
+    "s2Item4": "Cookies : petits fichiers de données pour améliorer votre expérience de navigation.",
+    "s3Title": "3. Utilisation de vos informations",
+    "s3Item1": "Pour traiter et exécuter vos commandes.",
+    "s3Item2": "Pour communiquer avec vous concernant vos commandes, demandes et promotions.",
+    "s3Item3": "Pour améliorer notre site web, produits et services.",
+    "s3Item4": "Pour respecter nos obligations légales.",
+    "s4Title": "4. Partage des données",
+    "s4Body": "Nous ne vendons ni ne louons vos informations personnelles à des tiers. Nous pouvons partager des informations avec des prestataires de services de confiance qui nous aident à exploiter notre activité.",
+    "s5Title": "5. Vos droits",
+    "s5Body": "Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles. Pour exercer ces droits, contactez-nous à",
+    "s6Title": "6. Nous contacter",
+    "s6Body": "Pour toute question concernant cette Politique de Confidentialité, contactez-nous à",
+    "s6Or": "ou rendez-nous visite à"
   },
   "terms": {
-    "title": "Conditions d'utilisation"
+    "title": "Conditions d'utilisation",
+    "heading": "Conditions d'Utilisation",
+    "overline": "Légal",
+    "lastUpdated": "Dernière mise à jour",
+    "s1Title": "1. Acceptation des conditions",
+    "s1Body": "En accédant ou en utilisant le site {name}, vous acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'êtes pas d'accord, vous ne pouvez pas accéder au site.",
+    "s2Title": "2. Produits et commandes",
+    "s2Body": "Tous les produits sont soumis à disponibilité. Nous nous réservons le droit de limiter les quantités, de refuser des commandes ou d'arrêter des produits à tout moment.",
+    "s3Title": "3. Paiement",
+    "s3Body": "Le paiement est requis au moment de la commande. Nous acceptons les principales cartes de crédit et autres modes de paiement affichés lors du paiement.",
+    "s4Title": "4. Livraison",
+    "s4Body": "{name} n'est pas responsable des retards causés par des circonstances indépendantes de notre volonté. Veuillez vous assurer que les détails de l'adresse de livraison sont exacts.",
+    "s5Title": "5. Retours et remboursements",
+    "s5Body": "En raison de la nature périssable de nos produits, nous n'acceptons pas les retours. Si vous n'êtes pas satisfait, contactez-nous dans les 24 heures suivant la livraison.",
+    "s6Title": "6. Propriété intellectuelle",
+    "s6Body": "Tout le contenu de ce site — textes, images, logos et designs — est la propriété de {name} et protégé par les lois sur le droit d'auteur.",
+    "s7Title": "7. Nous contacter",
+    "s7Body": "Des questions sur ces Conditions d'Utilisation ? Contactez-nous à"
   },
   "cart": {
     "title": "Panier",

@@ -130,6 +130,25 @@ export interface TeamMember {
   image?: string;
 }
 
+export interface AboutValue {
+  title: string;
+  description: string;
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  readTime: string;
+  image?: string;
+}
+
+export interface LegalConfig {
+  lastUpdated: string;
+}
+
 export interface PricingPlan {
   name: string;
   description?: string;
@@ -162,7 +181,10 @@ export interface SiteConfig {
   business: BusinessInfo;
   hero: HeroConfig;
   services: ServiceItem[];
-  about: AboutConfig;
+  about: AboutConfig & {
+    mission?: string;
+    values?: AboutValue[];
+  };
   gallery: GalleryConfig;
   testimonials: TestimonialItem[];
   faq: FAQItem[];
@@ -173,6 +195,8 @@ export interface SiteConfig {
   features?: FeatureItem[];
   partners?: PartnerItem[];
   stats?: StatItem[];
+  blog?: BlogPost[];
+  legal?: LegalConfig;
   sections: SectionId[];
   defaultLocale: Locale;
   availableLocales: Locale[];

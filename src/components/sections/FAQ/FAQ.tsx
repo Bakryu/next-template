@@ -90,7 +90,7 @@ export function FAQSection() {
             className="lg:col-span-4"
           >
             <Typography variant="overline" as="span" className="text-secondary">
-              FAQ
+              {t('overline')}
             </Typography>
             <Typography variant="h2" className="mt-4">
               {t('title')}

@@ -17,6 +17,7 @@ import { Typography } from '@/components/ui/Typography';
  */
 export function CTASectionV4() {
   const t = useTranslations('cta');
+  const tContact = useTranslations('contact');
   const { cta, business } = siteConfig;
 
   return (
@@ -55,7 +56,7 @@ export function CTASectionV4() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="caption" color="muted" className="uppercase tracking-wider">Phone</Typography>
+                  <Typography variant="caption" color="muted" className="uppercase tracking-wider">{tContact('phoneLabel')}</Typography>
                   <Typography weight="medium" className="font-heading">{business.phone}</Typography>
                 </div>
               </div>
@@ -65,7 +66,7 @@ export function CTASectionV4() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="caption" color="muted" className="uppercase tracking-wider">Email</Typography>
+                  <Typography variant="caption" color="muted" className="uppercase tracking-wider">{tContact('emailLabel')}</Typography>
                   <Typography weight="medium" className="font-heading">{business.email}</Typography>
                 </div>
               </div>

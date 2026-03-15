@@ -19,14 +19,15 @@ export async function generateMetadata({
 
 export default async function AboutPage() {
   const { about, business } = siteConfig;
+  const t = await getTranslations('aboutPage');
 
   return (
-    <Section id="about" >
+    <Section id="about">
       <Container size="md">
         {/* Page header */}
         <div className="mb-14">
           <Typography variant="overline" as="span" color="secondary">
-            About Us
+            {t('overline')}
           </Typography>
           <Typography variant="h1" className="mt-4">
             {about.title}
@@ -63,53 +64,43 @@ export default async function AboutPage() {
           </div>
         )}
 
-        {/* Mission & Values */}
-        <div className="mb-16">
-          <Typography variant="h2" className="mb-6">Our Mission</Typography>
-          <Typography variant="subtitle1" className="leading-[1.8]">
-            We believe that flowers have the power to transform spaces and uplift spirits.
-            Our mission is to bring the beauty of nature into everyday life through thoughtfully
-            crafted, sustainable floral arrangements that celebrate every occasion.
-          </Typography>
-        </div>
+        {/* Mission */}
+        {about.mission && (
+          <div className="mb-16">
+            <Typography variant="h2" className="mb-6">{t('missionHeading')}</Typography>
+            <Typography variant="subtitle1" className="leading-[1.8]">
+              {about.mission}
+            </Typography>
+          </div>
+        )}
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: 'Quality First',
-              description: 'We source only the freshest, highest-quality flowers from trusted local and international growers.',
-            },
-            {
-              title: 'Sustainable Practices',
-              description: 'We are committed to eco-friendly practices, from biodegradable packaging to seasonal sourcing.',
-            },
-            {
-              title: 'Personal Touch',
-              description: 'Every arrangement is handcrafted with care and customized to reflect your unique style and occasion.',
-            },
-          ].map((value, index) => (
-            <div
-              key={index}
-              className="rounded-2xl border border-border/40 bg-card p-6"
-            >
-              <Typography variant="h3">{value.title}</Typography>
-              <Typography variant="muted" className="mt-2">
-                {value.description}
-              </Typography>
-            </div>
-          ))}
-        </div>
+        {/* Values */}
+        {about.values && about.values.length > 0 && (
+          <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {about.values.map((value, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-border/40 bg-card p-6"
+              >
+                <Typography variant="h3">{value.title}</Typography>
+                <Typography variant="muted" className="mt-2">
+                  {value.description}
+                </Typography>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Business info */}
         <div className="mt-16 rounded-2xl bg-muted/30 p-8 md:p-12">
-          <Typography variant="h2" className="mb-6">Visit Us</Typography>
+          <Typography variant="h2" className="mb-6">{t('visitHeading')}</Typography>
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <Typography variant="h3" color="secondary" className="mb-2">Address</Typography>
+              <Typography variant="h3" color="secondary" className="mb-2">{t('addressLabel')}</Typography>
               <Typography color="muted">{business.address || business.location}</Typography>
             </div>
             <div>
-              <Typography variant="h3" color="secondary" className="mb-2">Contact</Typography>
+              <Typography variant="h3" color="secondary" className="mb-2">{t('contactLabel')}</Typography>
               <Typography color="muted">{business.phone}</Typography>
               <Typography color="muted">{business.email}</Typography>
             </div>
@@ -117,13 +108,13 @@ export default async function AboutPage() {
 
           {business.openingHours && (
             <div className="mt-8">
-              <Typography variant="h3" color="secondary" className="mb-3">Opening Hours</Typography>
+              <Typography variant="h3" color="secondary" className="mb-3">{t('hoursLabel')}</Typography>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {business.openingHours.map((hours, index) => (
                   <div key={index} className="flex justify-between text-sm">
                     <span className="font-medium">{hours.day}</span>
                     <span className="text-muted-foreground">
-                      {hours.closed ? 'Closed' : `${hours.open} — ${hours.close}`}
+                      {hours.closed ? t('closed') : `${hours.open} — ${hours.close}`}
                     </span>
                   </div>
                 ))}

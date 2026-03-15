@@ -44,15 +44,24 @@
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
-    "subtitle": "Antworten auf häufige Fragen."
+    "subtitle": "Antworten auf häufige Fragen.",
+    "overline": "FAQ"
   },
   "cta": {
     "title": "Bereit, Ihren Raum aufzuhellen?",
-    "button": "Loslegen"
+    "button": "Loslegen",
+    "heading": "Bereit, Ihren Raum aufzuhellen?",
+    "subheading": "Bestellen Sie noch heute Ihr individuelles Arrangement oder starten Sie ein Wochenabonnement."
   },
   "contact": {
     "title": "Kontakt aufnehmen",
     "successMessage": "Vielen Dank! Ihre Nachricht wurde gesendet.",
+    "visitUsLabel": "Besuchen Sie uns",
+    "directionsButton": "Wegbeschreibung",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-Mail",
+    "hoursLabel": "Öffnungszeiten",
     "form": {
       "name": "Name",
       "namePlaceholder": "Ihr Name",
@@ -80,7 +89,10 @@
   "pricing": {
     "title": "Preise",
     "subtitle": "Wählen Sie den perfekten Plan für Sie.",
+    "description": "",
     "popular": "Beliebt",
+    "popularLabel": "Am beliebtesten",
+    "selectButton": "Loslegen",
     "getStarted": "Loslegen"
   },
   "features": {
@@ -96,16 +108,67 @@
     "subtitle": "Zahlen, die für sich sprechen."
   },
   "blog": {
-    "title": "Blog"
+    "title": "Blog",
+    "heading": "Neuigkeiten & Einblicke",
+    "subtitle": "Tipps, Trends und Geschichten aus unserem Blumenstudio.",
+    "readMore": "Weiterlesen"
   },
   "aboutPage": {
-    "title": "Über uns"
+    "title": "Über uns",
+    "heading": "Über Uns",
+    "overline": "Über Uns",
+    "missionHeading": "Unsere Mission",
+    "visitHeading": "Besuchen Sie uns",
+    "addressLabel": "Adresse",
+    "contactLabel": "Kontakt",
+    "hoursLabel": "Öffnungszeiten",
+    "closed": "Geschlossen"
   },
   "privacy": {
-    "title": "Datenschutzrichtlinie"
+    "title": "Datenschutzrichtlinie",
+    "heading": "Datenschutzrichtlinie",
+    "overline": "Rechtliches",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "s1Title": "1. Einleitung",
+    "s1Body": "{name} verpflichtet sich, Ihre Privatsphäre zu schützen. Diese Datenschutzrichtlinie erläutert, wie wir Ihre Informationen erfassen, verwenden und schützen, wenn Sie unsere Website besuchen.",
+    "s2Title": "2. Erhobene Daten",
+    "s2Intro": "Wir können auf verschiedene Weise Informationen über Sie erfassen:",
+    "s2Item1": "Persönliche Daten: Name, E-Mail-Adresse, Telefonnummer und Lieferadresse bei einer Bestellung.",
+    "s2Item2": "Zahlungsdaten: sicher über unseren Zahlungsanbieter verarbeitet — wir speichern keine Kartendaten.",
+    "s2Item3": "Nutzungsdaten: besuchte Seiten, Verweildauer, Browsertyp und Verweisseiten.",
+    "s2Item4": "Cookies: kleine Datendateien zur Verbesserung Ihres Browsererlebnisses.",
+    "s3Title": "3. Verwendung Ihrer Daten",
+    "s3Item1": "Zur Bearbeitung und Ausführung Ihrer Bestellungen.",
+    "s3Item2": "Zur Kommunikation mit Ihnen über Bestellungen, Anfragen und Aktionen.",
+    "s3Item3": "Zur Verbesserung unserer Website, Produkte und Dienstleistungen.",
+    "s3Item4": "Zur Einhaltung rechtlicher Verpflichtungen.",
+    "s4Title": "4. Datenweitergabe",
+    "s4Body": "Wir verkaufen oder vermieten Ihre persönlichen Daten nicht an Dritte. Wir können Informationen mit vertrauenswürdigen Dienstleistern teilen, die uns beim Betrieb unseres Unternehmens unterstützen.",
+    "s5Title": "5. Ihre Rechte",
+    "s5Body": "Sie haben das Recht auf Zugang, Berichtigung oder Löschung Ihrer personenbezogenen Daten. Um diese Rechte auszuüben, kontaktieren Sie uns unter",
+    "s6Title": "6. Kontakt",
+    "s6Body": "Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns unter",
+    "s6Or": "oder besuchen Sie uns in"
   },
   "terms": {
-    "title": "Nutzungsbedingungen"
+    "title": "Nutzungsbedingungen",
+    "heading": "Nutzungsbedingungen",
+    "overline": "Rechtliches",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "s1Title": "1. Zustimmung zu den Bedingungen",
+    "s1Body": "Durch den Zugriff auf die {name}-Website stimmen Sie diesen Nutzungsbedingungen zu. Bei Nichteinverständnis dürfen Sie die Website nicht nutzen.",
+    "s2Title": "2. Produkte und Bestellungen",
+    "s2Body": "Alle Produkte unterliegen der Verfügbarkeit. Wir behalten uns das Recht vor, Mengen zu begrenzen, Bestellungen abzulehnen oder Produkte jederzeit einzustellen.",
+    "s3Title": "3. Zahlung",
+    "s3Body": "Die Zahlung ist zum Zeitpunkt der Bestellung erforderlich. Wir akzeptieren gängige Kreditkarten und andere beim Checkout angezeigte Zahlungsmethoden.",
+    "s4Title": "4. Lieferung",
+    "s4Body": "{name} haftet nicht für Verzögerungen durch Umstände, die außerhalb unserer Kontrolle liegen. Bitte stellen Sie sicher, dass die Lieferadresse bei der Bestellung korrekt ist.",
+    "s5Title": "5. Rückgabe und Rückerstattung",
+    "s5Body": "Aufgrund der verderblichen Natur unserer Produkte akzeptieren wir keine Rückgaben. Bei Unzufriedenheit kontaktieren Sie uns innerhalb von 24 Stunden nach der Lieferung.",
+    "s6Title": "6. Geistiges Eigentum",
+    "s6Body": "Alle Inhalte dieser Website — Texte, Bilder, Logos und Designs — sind Eigentum von {name} und durch Urheberrecht geschützt.",
+    "s7Title": "7. Kontakt",
+    "s7Body": "Fragen zu diesen Nutzungsbedingungen? Kontaktieren Sie uns unter"
   },
   "cart": {
     "title": "Warenkorb",
