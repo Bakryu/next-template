@@ -1,15 +1,7 @@
 import React from 'react';
 import { Link } from '@/lib/i18n/routing';
 import { useTranslations } from 'next-intl';
-import {
-  Instagram,
-  Facebook,
-  Twitter,
-  Youtube,
-  MapPin,
-  Phone,
-  Mail,
-} from 'lucide-react';
+import { Instagram, Facebook, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { navigationConfig } from '@/config/navigation.config';
 import { Container } from '../Container';
@@ -28,13 +20,15 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border/40 bg-foreground text-background">
+    <footer className="border-border/40 bg-foreground text-background relative border-t">
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:py-20">
           {/* Brand */}
           <div className="space-y-6 lg:col-span-4">
-            <Typography variant="h4" as="h3" weight="bold">{business.name}</Typography>
-            <Typography variant="body2" className="leading-[1.8] text-background/60">
+            <Typography variant="h4" as="h3" weight="bold">
+              {business.name}
+            </Typography>
+            <Typography variant="body2" className="text-background/60 leading-[1.8]">
               {business.description}
             </Typography>
             {/* Social Links */}
@@ -49,7 +43,7 @@ export function Footer() {
                     href={`https://${platform}.com/${handle.replace('@', '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-background/5 text-background/50 transition-all duration-300 hover:bg-secondary/20 hover:text-secondary"
+                    className="bg-background/5 text-background/50 hover:bg-secondary/20 hover:text-secondary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300"
                     aria-label={platform}
                   >
                     <Icon className="h-4 w-4" />
@@ -61,7 +55,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-2 lg:col-start-6">
-            <Typography variant="overline" as="h4" className="mb-5 text-background/40">
+            <Typography variant="overline" as="h4" className="text-background/40 mb-5">
               {t('footer.navigation')}
             </Typography>
             <ul className="space-y-3">
@@ -69,7 +63,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-background/60 transition-colors duration-300 hover:text-secondary"
+                    className="text-background/60 hover:text-secondary text-sm transition-colors duration-300"
                   >
                     {t(item.translationKey)}
                   </Link>
@@ -80,29 +74,29 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="lg:col-span-3">
-            <Typography variant="overline" as="h4" className="mb-5 text-background/40">
+            <Typography variant="overline" as="h4" className="text-background/40 mb-5">
               {t('footer.contact')}
             </Typography>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-background/60">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-secondary/60" />
+              <li className="text-background/60 flex items-start gap-3 text-sm">
+                <MapPin className="text-secondary/60 mt-0.5 h-4 w-4 shrink-0" />
                 {business.address || business.location}
               </li>
               <li>
                 <a
                   href={`tel:${business.phone}`}
-                  className="flex items-center gap-3 text-sm text-background/60 transition-colors duration-300 hover:text-secondary"
+                  className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-secondary/60" />
+                  <Phone className="text-secondary/60 h-4 w-4 shrink-0" />
                   {business.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${business.email}`}
-                  className="flex items-center gap-3 text-sm text-background/60 transition-colors duration-300 hover:text-secondary"
+                  className="text-background/60 hover:text-secondary flex items-center gap-3 text-sm transition-colors duration-300"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-secondary/60" />
+                  <Mail className="text-secondary/60 h-4 w-4 shrink-0" />
                   {business.email}
                 </a>
               </li>
@@ -112,28 +106,56 @@ export function Footer() {
           {/* Hours */}
           {business.openingHours && (
             <div className="lg:col-span-3">
-              <Typography variant="overline" as="h4" className="mb-5 text-background/40">
+              <Typography variant="overline" as="h4" className="text-background/40 mb-5">
                 {t('footer.hours')}
               </Typography>
               <ul className="space-y-2">
-                {business.openingHours.map((hours) => (
-                  <li
-                    key={hours.day}
-                    className="flex justify-between text-sm"
-                  >
-                    <span className="text-background/40">{hours.day}</span>
-                    <span className="text-background/70">
-                      {hours.closed ? t('footer.closed') : `${hours.open} – ${hours.close}`}
-                    </span>
-                  </li>
-                ))}
+                {(() => {
+                  // Group consecutive days with identical hours
+                  type Group = {
+                    from: string;
+                    to: string;
+                    open: string;
+                    close: string;
+                    closed: boolean;
+                  };
+                  const groups: Group[] = [];
+                  business.openingHours.forEach((h) => {
+                    const prev = groups[groups.length - 1];
+                    const closed = !!h.closed;
+                    if (
+                      prev &&
+                      prev.closed === closed &&
+                      prev.open === h.open &&
+                      prev.close === h.close
+                    ) {
+                      prev.to = h.day;
+                    } else {
+                      groups.push({ from: h.day, to: h.day, open: h.open, close: h.close, closed });
+                    }
+                  });
+                  return groups.map((g) => {
+                    const label =
+                      g.from === g.to
+                        ? t(`days.${g.from}Short` as Parameters<typeof t>[0])
+                        : `${t(`days.${g.from}Short` as Parameters<typeof t>[0])} – ${t(`days.${g.to}Short` as Parameters<typeof t>[0])}`;
+                    return (
+                      <li key={g.from} className="flex justify-between text-sm">
+                        <span className="text-background/40">{label}</span>
+                        <span className="text-background/70">
+                          {g.closed ? t('footer.closed') : `${g.open} – ${g.close}`}
+                        </span>
+                      </li>
+                    );
+                  });
+                })()}
               </ul>
             </div>
           )}
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-background/10 py-8">
+        <div className="border-background/10 border-t py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Typography variant="caption" className="text-background/30 tracking-wider">
               &copy; {year} {business.name}. {t('footer.rights')}
@@ -141,13 +163,13 @@ export function Footer() {
             <div className="flex gap-6">
               <Link
                 href="/privacy"
-                className="text-xs text-background/30 transition-colors duration-300 hover:text-secondary"
+                className="text-background/30 hover:text-secondary text-xs transition-colors duration-300"
               >
                 {t('footer.privacy')}
               </Link>
               <Link
                 href="/terms"
-                className="text-xs text-background/30 transition-colors duration-300 hover:text-secondary"
+                className="text-background/30 hover:text-secondary text-xs transition-colors duration-300"
               >
                 {t('footer.terms')}
               </Link>

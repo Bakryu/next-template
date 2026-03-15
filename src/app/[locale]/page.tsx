@@ -2,7 +2,7 @@ import { getHomepageSections } from '@/config/sections.config';
 import type { SectionId } from '@/types/site.types';
 
 // Section component imports
-import { HeroSection, HeroSectionV2, HeroSectionV3 } from '@/components/sections/Hero';
+import { HeroSection } from '@/components/sections/Hero';
 import { ServicesSection } from '@/components/sections/Services';
 import { AboutSection } from '@/components/sections/About';
 import { GalleryPreviewSection } from '@/components/sections/Gallery';
@@ -18,12 +18,8 @@ import { FeaturesSection } from '@/components/sections/Features';
 import { PartnersSection } from '@/components/sections/Partners';
 import { StatsSection } from '@/components/sections/Stats';
 
-function Group() {
-  return <><HeroSection />, <HeroSectionV2 />, <HeroSectionV3 />, </>
-}
-
 const sectionComponents: Record<SectionId, React.ComponentType> = {
-  hero: Group,
+  hero: HeroSection,
   services: ServicesSection,
   about: AboutSection,
   gallery: GalleryPreviewSection,

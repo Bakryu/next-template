@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
 import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
@@ -13,7 +12,6 @@ import { Typography } from '@/components/ui/Typography';
  * Inline stats on a secondary-colored banner with bold contrast.
  */
 export function StatsSectionV4() {
-  const t = useTranslations('stats');
   const stats = siteConfig.stats;
 
   if (!stats?.length) return null;
@@ -38,7 +36,9 @@ export function StatsSectionV4() {
               className="text-center"
             >
               <Typography variant="h2">{stat.value}</Typography>
-              <Typography variant="small" className="mt-2 opacity-70">{stat.label}</Typography>
+              <Typography variant="small" className="mt-2 opacity-70">
+                {stat.label}
+              </Typography>
             </motion.div>
           ))}
         </motion.div>

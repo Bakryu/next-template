@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { MapPin, Clock, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
-import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { Typography } from '@/components/ui/Typography';
 
@@ -14,7 +13,7 @@ import { Typography } from '@/components/ui/Typography';
  * Full-width map with a floating info card overlay on the left.
  */
 export function MapSectionV2() {
-  const t = useTranslations('contact');
+  const tDays = useTranslations('days');
   const { contact, business } = siteConfig;
 
   if (!contact.mapEmbedUrl) return null;
@@ -45,27 +44,36 @@ export function MapSectionV2() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="absolute left-6 top-6 z-10 max-w-sm rounded-2xl border border-border/40 bg-card p-8 shadow-xl sm:left-12 sm:top-12"
+          className="border-border/40 bg-card absolute top-6 left-6 z-10 max-w-sm rounded-2xl border p-8 shadow-xl sm:top-12 sm:left-12"
         >
-          <Typography variant="h3" className="text-lg">{business.name}</Typography>
+          <Typography variant="h3" className="text-lg">
+            {business.name}
+          </Typography>
 
-          <div className="mt-6 space-y-4 text-sm text-muted-foreground">
+          <div className="text-muted-foreground mt-6 space-y-4 text-sm">
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-secondary" />
-              <Typography variant="small" as="span">{business.address || business.location}</Typography>
+              <MapPin className="text-secondary mt-0.5 h-4 w-4 shrink-0" />
+              <Typography variant="small" as="span">
+                {business.address || business.location}
+              </Typography>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="h-4 w-4 shrink-0 text-secondary" />
-              <Typography variant="small" as="span">{business.phone}</Typography>
+              <Phone className="text-secondary h-4 w-4 shrink-0" />
+              <Typography variant="small" as="span">
+                {business.phone}
+              </Typography>
             </div>
             <div className="flex items-center gap-3">
-              <Clock className="h-4 w-4 shrink-0 text-secondary" />
+              <Clock className="text-secondary h-4 w-4 shrink-0" />
               {business.openingHours ? (
                 <Typography variant="small" as="span">
                   {business.openingHours
                     .filter((h) => !h.closed)
                     .slice(0, 1)
-                    .map((h) => `${h.day}: ${h.open} – ${h.close}`)
+                    .map(
+                      (h) =>
+                        `${tDays(h.day as Parameters<typeof tDays>[0])}: ${h.open} – ${h.close}`,
+                    )
                     .join(', ')}
                 </Typography>
               ) : null}

@@ -39,7 +39,7 @@ export function Section({
   return (
     <section
       className={cn(
-        'relative flex justify-center items-center overflow-hidden',
+        'relative flex items-center justify-center overflow-hidden',
         bgImage ? 'bg-cover bg-center bg-no-repeat' : variantClasses[variant],
         paddingClasses[padding],
         className,
@@ -47,8 +47,14 @@ export function Section({
       style={bgImage ? { backgroundImage: `url(${bgImage})` } : undefined}
       {...props}
     >
-
-      {bgImage ? <div className="relative">{children}</div> : children}
+      {bgImage ? (
+        <>
+          <div className="absolute inset-0 bg-black" style={{ opacity: bgOverlayOpacity / 100 }} />
+          <div className="relative z-10">{children}</div>
+        </>
+      ) : (
+        children
+      )}
     </section>
   );
 }

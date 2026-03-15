@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Send, MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
@@ -14,6 +14,7 @@ import { Typography } from '@/components/ui/Typography';
 
 export function ContactSection() {
   const t = useTranslations('contact');
+  const tDays = useTranslations('days');
   const { contact, business } = siteConfig;
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,7 +67,7 @@ export function ContactSection() {
             >
               <form
                 onSubmit={handleSubmit}
-                className="rounded-2xl border border-border/50 bg-card p-8 shadow-sm"
+                className="border-border/50 bg-card rounded-2xl border p-8 shadow-sm"
               >
                 <div className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
@@ -91,7 +92,12 @@ export function ContactSection() {
                     placeholder={t('form.phonePlaceholder')}
                   />
                   <div className="flex flex-col gap-2">
-                    <Typography variant="label" as="label" className="text-foreground" {...{ htmlFor: 'message' }}>
+                    <Typography
+                      variant="label"
+                      as="label"
+                      className="text-foreground"
+                      {...{ htmlFor: 'message' }}
+                    >
                       {t('form.message')}
                     </Typography>
                     <textarea
@@ -100,7 +106,7 @@ export function ContactSection() {
                       rows={5}
                       required
                       placeholder={t('form.messagePlaceholder')}
-                      className="flex w-full rounded-xl border border-border/60 bg-background px-4 py-3 text-sm transition-all duration-300 placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-transparent disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+                      className="border-border/60 bg-background placeholder:text-muted-foreground/60 focus-visible:ring-ring flex w-full resize-none rounded-xl border px-4 py-3 text-sm transition-all duration-300 focus-visible:border-transparent focus-visible:ring-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                     />
                   </div>
                   <Button
@@ -108,7 +114,7 @@ export function ContactSection() {
                     size="lg"
                     rounded="full"
                     disabled={isSubmitting}
-                    className="gap-2 group"
+                    className="group gap-2"
                   >
                     {isSubmitting ? (
                       t('form.sending')
@@ -154,10 +160,10 @@ export function ContactSection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 rounded-xl bg-card p-5 border border-border/30"
+                className="bg-card border-border/30 flex items-start gap-4 rounded-xl border p-5"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary/10">
-                  <item.icon className="h-4 w-4 text-secondary" />
+                <div className="bg-secondary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                  <item.icon className="text-secondary h-4 w-4" />
                 </div>
                 <div>
                   <Typography variant="overline" as="p" color="muted">
@@ -166,12 +172,14 @@ export function ContactSection() {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="mt-1 block text-sm text-foreground transition-colors hover:text-secondary"
+                      className="text-foreground hover:text-secondary mt-1 block text-sm transition-colors"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <Typography variant="body2" className="mt-1 text-foreground">{item.value}</Typography>
+                    <Typography variant="body2" className="text-foreground mt-1">
+                      {item.value}
+                    </Typography>
                   )}
                 </div>
               </div>
@@ -179,10 +187,10 @@ export function ContactSection() {
 
             {/* Hours */}
             {business.openingHours && (
-              <div className="rounded-xl bg-card p-5 border border-border/30">
+              <div className="bg-card border-border/30 rounded-xl border p-5">
                 <div className="mb-3 flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary/10">
-                    <Clock className="h-4 w-4 text-secondary" />
+                  <div className="bg-secondary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Clock className="text-secondary h-4 w-4" />
                   </div>
                   <Typography variant="overline" as="p" color="muted">
                     {t('info.hours')}
@@ -191,7 +199,9 @@ export function ContactSection() {
                 <div className="space-y-1.5 pl-[52px]">
                   {business.openingHours.slice(0, 4).map((h) => (
                     <Typography variant="body2" key={h.day} className="flex justify-between">
-                      <Typography variant="body2" as="span" color="muted">{h.day}</Typography>
+                      <Typography variant="body2" as="span" color="muted">
+                        {tDays(h.day as Parameters<typeof tDays>[0])}
+                      </Typography>
                       <Typography variant="body2" as="span" weight="medium">
                         {h.closed ? t('info.closed') : `${h.open} – ${h.close}`}
                       </Typography>

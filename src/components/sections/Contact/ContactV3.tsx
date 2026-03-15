@@ -17,6 +17,7 @@ import { Typography } from '@/components/ui/Typography';
  */
 export function ContactSectionV3() {
   const t = useTranslations('contact');
+  const tDays = useTranslations('days');
   const { contact, business } = siteConfig;
 
   return (
@@ -39,46 +40,61 @@ export function ContactSectionV3() {
 
             <div className="mt-12 space-y-8">
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-secondary">
+                <div className="text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">{t('addressLabel')}</Typography>
-                  <Typography variant="body2" className="mt-1 opacity-60">{business.address || business.location}</Typography>
+                  <Typography variant="label" as="p">
+                    {t('addressLabel')}
+                  </Typography>
+                  <Typography variant="body2" className="mt-1 opacity-60">
+                    {business.address || business.location}
+                  </Typography>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-secondary">
+                <div className="text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">{t('phoneLabel')}</Typography>
-                  <Typography variant="body2" className="mt-1 opacity-60">{business.phone}</Typography>
+                  <Typography variant="label" as="p">
+                    {t('phoneLabel')}
+                  </Typography>
+                  <Typography variant="body2" className="mt-1 opacity-60">
+                    {business.phone}
+                  </Typography>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-secondary">
+                <div className="text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">{t('emailLabel')}</Typography>
-                  <Typography variant="body2" className="mt-1 opacity-60">{business.email}</Typography>
+                  <Typography variant="label" as="p">
+                    {t('emailLabel')}
+                  </Typography>
+                  <Typography variant="body2" className="mt-1 opacity-60">
+                    {business.email}
+                  </Typography>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-secondary">
+                <div className="text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5">
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="label" as="p">{t('hoursLabel')}</Typography>
+                  <Typography variant="label" as="p">
+                    {t('hoursLabel')}
+                  </Typography>
                   {business.openingHours ? (
                     <div className="mt-1 space-y-1">
                       {business.openingHours.slice(0, 3).map((h) => (
                         <Typography key={h.day} variant="body2" className="opacity-60">
-                          {h.day}: {h.closed ? t('info.closed') : `${h.open} – ${h.close}`}
+                          {tDays(h.day as Parameters<typeof tDays>[0])}:{' '}
+                          {h.closed ? t('info.closed') : `${h.open} – ${h.close}`}
                         </Typography>
                       ))}
                     </div>
@@ -95,19 +111,32 @@ export function ContactSectionV3() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="h-full flex justify-between flex-col rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+              className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="space-y-4">
-                <Input placeholder={t('form.namePlaceholder', { fallback: 'Your name' })} className="border-white/10 bg-white/5 text-white placeholder:text-white/30" />
-                <Input type="email" placeholder={t('form.emailPlaceholder', { fallback: 'Your email' })} className="border-white/10 bg-white/5 text-white placeholder:text-white/30" />
+                <Input
+                  placeholder={t('form.namePlaceholder', { fallback: 'Your name' })}
+                  className="border-white/10 bg-white/5 text-white placeholder:text-white/30"
+                />
+                <Input
+                  type="email"
+                  placeholder={t('form.emailPlaceholder', { fallback: 'Your email' })}
+                  className="border-white/10 bg-white/5 text-white placeholder:text-white/30"
+                />
                 <textarea
                   placeholder={t('form.messagePlaceholder', { fallback: 'Your message...' })}
                   rows={5}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white transition-colors focus:border-secondary focus:outline-none placeholder:text-white/30 resize-none"
+                  className="focus:border-secondary w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white transition-colors placeholder:text-white/30 focus:outline-none"
                 />
               </div>
-              <Button type="submit" size="lg" variant="secondary" rounded="full" className="w-full gap-2">
+              <Button
+                type="submit"
+                size="lg"
+                variant="secondary"
+                rounded="full"
+                className="w-full gap-2"
+              >
                 <Send className="h-4 w-4" />
                 {t('form.submit', { fallback: 'Send Message' })}
               </Button>
@@ -116,7 +145,7 @@ export function ContactSectionV3() {
         </div>
       </Container>
 
-      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-secondary/5 blur-[120px]" />
+      <div className="bg-secondary/5 pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full blur-[120px]" />
     </Section>
   );
 }

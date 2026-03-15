@@ -190,6 +190,22 @@
     "successMessage": "Спасибо за заказ. Вы получите подтверждение на email в ближайшее время.",
     "backHome": "На главную"
   },
+  "days": {
+    "Monday": "Понедельник",
+    "Tuesday": "Вторник",
+    "Wednesday": "Среда",
+    "Thursday": "Четверг",
+    "Friday": "Пятница",
+    "Saturday": "Суббота",
+    "Sunday": "Воскресенье",
+    "MondayShort": "Пн",
+    "TuesdayShort": "Вт",
+    "WednesdayShort": "Ср",
+    "ThursdayShort": "Чт",
+    "FridayShort": "Пт",
+    "SaturdayShort": "Сб",
+    "SundayShort": "Вс"
+  },
   "footer": {
     "navigation": "Навигация",
     "contact": "Контакты",

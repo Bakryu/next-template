@@ -7,7 +7,7 @@ import { Plus, Minus } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
-import { Typography, MotionTypography } from '@/components/ui/Typography';
+import { Typography } from '@/components/ui/Typography';
 
 /**
  * FAQ V2 — Centered Minimal
@@ -36,7 +36,7 @@ export function FAQSectionV2() {
           </Typography>
         </motion.div>
 
-        <div className="space-y-0 divide-y divide-border/60">
+        <div className="divide-border/60 space-y-0 divide-y">
           {faq.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -51,8 +51,15 @@ export function FAQSectionV2() {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="flex w-full items-center justify-between py-6 text-left"
                 >
-                  <Typography variant="body1" weight="medium" as="span" className="pr-8 font-heading">{item.question}</Typography>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:border-secondary hover:text-secondary">
+                  <Typography
+                    variant="body1"
+                    weight="medium"
+                    as="span"
+                    className="font-heading pr-8"
+                  >
+                    {item.question}
+                  </Typography>
+                  <span className="border-border/60 text-muted-foreground hover:border-secondary hover:text-secondary flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
@@ -66,7 +73,10 @@ export function FAQSectionV2() {
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <Typography variant="body2" className="pb-6 leading-relaxed text-muted-foreground">
+                      <Typography
+                        variant="body2"
+                        className="text-muted-foreground pb-6 leading-relaxed"
+                      >
                         {item.answer}
                       </Typography>
                     </motion.div>

@@ -30,27 +30,19 @@ export function CTASection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mb-8 h-0.5 w-12 bg-secondary"
+            className="bg-secondary mx-auto mb-8 h-0.5 w-12"
           />
 
-          <Typography variant="h2">
-            {t('title', { fallback: cta.title })}
-          </Typography>
+          <Typography variant="h2">{t('title', { fallback: cta.title })}</Typography>
 
           {cta.subtitle && (
             <Typography className="mx-auto mt-6 max-w-xl text-lg opacity-60">
-              {cta.subtitle}
+              {t('subheading', { fallback: cta.subtitle })}
             </Typography>
           )}
 
           <div className="mt-10">
-            <Button
-              size="xl"
-              variant="secondary"
-              rounded="full"
-              className="gap-2 group"
-              asChild
-            >
+            <Button size="xl" variant="secondary" rounded="full" className="group gap-2" asChild>
               <Link href={cta.buttonHref}>
                 {t('button', { fallback: cta.buttonText })}
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -61,8 +53,8 @@ export function CTASection() {
       </Container>
 
       {/* Decorative gradient orbs */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-secondary/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
+      <div className="bg-secondary/10 pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-[120px]" />
+      <div className="bg-accent/10 pointer-events-none absolute -right-32 -bottom-32 h-96 w-96 rounded-full blur-[120px]" />
     </Section>
   );
 }

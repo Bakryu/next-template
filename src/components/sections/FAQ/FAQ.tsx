@@ -7,7 +7,7 @@ import { Plus } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
-import { Typography, MotionTypography } from '@/components/ui/Typography';
+import { Typography } from '@/components/ui/Typography';
 import { cn } from '@/lib/utils/cn';
 
 function FAQItem({
@@ -33,7 +33,7 @@ function FAQItem({
         'group rounded-2xl border transition-all duration-300',
         isOpen
           ? 'border-secondary/20 bg-card shadow-md'
-          : 'border-border/40 bg-transparent hover:border-border hover:bg-card/50',
+          : 'border-border/40 hover:border-border hover:bg-card/50 bg-transparent',
       )}
     >
       <button
@@ -41,7 +41,9 @@ function FAQItem({
         className="flex w-full items-center justify-between p-6 text-left"
         aria-expanded={isOpen}
       >
-        <Typography variant="body1" weight="semibold" as="span" className="pr-6 tracking-tight">{question}</Typography>
+        <Typography variant="body1" weight="semibold" as="span" className="pr-6 tracking-tight">
+          {question}
+        </Typography>
         <div
           className={cn(
             'flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300',
@@ -62,7 +64,9 @@ function FAQItem({
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <Typography className="px-6 pb-6 text-muted-foreground leading-[1.8]">{answer}</Typography>
+            <Typography className="text-muted-foreground px-6 pb-6 leading-[1.8]">
+              {answer}
+            </Typography>
           </motion.div>
         )}
       </AnimatePresence>
@@ -95,7 +99,7 @@ export function FAQSection() {
             <Typography variant="h2" className="mt-4">
               {t('title')}
             </Typography>
-            <Typography className="mt-4 text-muted-foreground leading-relaxed">
+            <Typography className="text-muted-foreground mt-4 leading-relaxed">
               {t('subtitle')}
             </Typography>
           </motion.div>

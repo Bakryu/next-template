@@ -190,6 +190,22 @@
     "successMessage": "Thank you for your order. You will receive a confirmation email shortly.",
     "backHome": "Back to Home"
   },
+  "days": {
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "Sunday": "Sunday",
+    "MondayShort": "Mon",
+    "TuesdayShort": "Tue",
+    "WednesdayShort": "Wed",
+    "ThursdayShort": "Thu",
+    "FridayShort": "Fri",
+    "SaturdayShort": "Sat",
+    "SundayShort": "Sun"
+  },
   "footer": {
     "navigation": "Navigation",
     "contact": "Contact",

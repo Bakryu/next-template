@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
 import { siteConfig } from '@/config/site.config';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
@@ -13,7 +12,6 @@ import { Typography } from '@/components/ui/Typography';
  * Minimal single-row stat counters with dividers.
  */
 export function StatsSectionV2() {
-  const t = useTranslations('stats');
   const stats = siteConfig.stats;
 
   if (!stats?.length) return null;
@@ -26,7 +24,7 @@ export function StatsSectionV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-center divide-x divide-border/40"
+          className="divide-border/40 flex flex-wrap items-center justify-center divide-x"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -40,7 +38,7 @@ export function StatsSectionV2() {
               <Typography variant="h2" className="text-secondary">
                 {stat.value}
               </Typography>
-              <Typography variant="overline" className="mt-2 text-muted-foreground">
+              <Typography variant="overline" className="text-muted-foreground mt-2">
                 {stat.label}
               </Typography>
             </motion.div>

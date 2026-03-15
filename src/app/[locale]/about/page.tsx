@@ -20,6 +20,7 @@ export async function generateMetadata({
 export default async function AboutPage() {
   const { about, business } = siteConfig;
   const t = await getTranslations('aboutPage');
+  const tDays = await getTranslations('days');
 
   return (
     <Section id="about">
@@ -37,11 +38,7 @@ export default async function AboutPage() {
         {/* Story content */}
         <div className="mb-16 space-y-6">
           {about.paragraphs.map((paragraph, index) => (
-            <Typography
-              key={index}
-              variant="subtitle1"
-              className="leading-[1.8]"
-            >
+            <Typography key={index} variant="subtitle1" className="leading-[1.8]">
               {paragraph}
             </Typography>
           ))}
@@ -51,14 +48,11 @@ export default async function AboutPage() {
         {about.stats && (
           <div className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">
             {about.stats.map((stat, index) => (
-              <div
-                key={index}
-                className="rounded-2xl bg-muted/50 p-6 text-center"
-              >
-                <div className="text-3xl font-bold font-heading text-foreground">
-                  {stat.value}
-                </div>
-                <Typography variant="muted" className="mt-1">{stat.label}</Typography>
+              <div key={index} className="bg-muted/50 rounded-2xl p-6 text-center">
+                <div className="font-heading text-foreground text-3xl font-bold">{stat.value}</div>
+                <Typography variant="muted" className="mt-1">
+                  {stat.label}
+                </Typography>
               </div>
             ))}
           </div>
@@ -67,7 +61,9 @@ export default async function AboutPage() {
         {/* Mission */}
         {about.mission && (
           <div className="mb-16">
-            <Typography variant="h2" className="mb-6">{t('missionHeading')}</Typography>
+            <Typography variant="h2" className="mb-6">
+              {t('missionHeading')}
+            </Typography>
             <Typography variant="subtitle1" className="leading-[1.8]">
               {about.mission}
             </Typography>
@@ -78,10 +74,7 @@ export default async function AboutPage() {
         {about.values && about.values.length > 0 && (
           <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {about.values.map((value, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-border/40 bg-card p-6"
-              >
+              <div key={index} className="border-border/40 bg-card rounded-2xl border p-6">
                 <Typography variant="h3">{value.title}</Typography>
                 <Typography variant="muted" className="mt-2">
                   {value.description}
@@ -92,15 +85,21 @@ export default async function AboutPage() {
         )}
 
         {/* Business info */}
-        <div className="mt-16 rounded-2xl bg-muted/30 p-8 md:p-12">
-          <Typography variant="h2" className="mb-6">{t('visitHeading')}</Typography>
+        <div className="bg-muted/30 mt-16 rounded-2xl p-8 md:p-12">
+          <Typography variant="h2" className="mb-6">
+            {t('visitHeading')}
+          </Typography>
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <Typography variant="h3" color="secondary" className="mb-2">{t('addressLabel')}</Typography>
+              <Typography variant="h3" color="secondary" className="mb-2">
+                {t('addressLabel')}
+              </Typography>
               <Typography color="muted">{business.address || business.location}</Typography>
             </div>
             <div>
-              <Typography variant="h3" color="secondary" className="mb-2">{t('contactLabel')}</Typography>
+              <Typography variant="h3" color="secondary" className="mb-2">
+                {t('contactLabel')}
+              </Typography>
               <Typography color="muted">{business.phone}</Typography>
               <Typography color="muted">{business.email}</Typography>
             </div>
@@ -108,11 +107,15 @@ export default async function AboutPage() {
 
           {business.openingHours && (
             <div className="mt-8">
-              <Typography variant="h3" color="secondary" className="mb-3">{t('hoursLabel')}</Typography>
+              <Typography variant="h3" color="secondary" className="mb-3">
+                {t('hoursLabel')}
+              </Typography>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {business.openingHours.map((hours, index) => (
                   <div key={index} className="flex justify-between text-sm">
-                    <span className="font-medium">{hours.day}</span>
+                    <span className="font-medium">
+                      {tDays(hours.day as Parameters<typeof tDays>[0])}
+                    </span>
                     <span className="text-muted-foreground">
                       {hours.closed ? t('closed') : `${hours.open} — ${hours.close}`}
                     </span>
